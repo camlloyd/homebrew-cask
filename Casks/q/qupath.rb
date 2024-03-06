@@ -1,9 +1,9 @@
 cask "qupath" do
   arch arm: "arm64", intel: "x64"
 
-  version "0.5.0"
-  sha256 arm:   "e08fa1542298b7c7ef56acfeba10febc7c1c7dd2f3e11544a01723f100f99402",
-         intel: "6d36907995ccfd54ce514ad7a7011f8f7988ce285923fff526d1d19a891cf5ad"
+  version "0.5.1"
+  sha256 arm:   "83388e2bfb945b12e82492eafa7f07129bef1e3f7b06e438b9755e318506710d",
+         intel: "a4421d62e2537ea0c5622840baaeec3d4ce3077524baf5d104efa4b8d759813f"
 
   language "en", default: true do
     "en_US"
