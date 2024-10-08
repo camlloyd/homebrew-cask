@@ -3,12 +3,12 @@ cask "zspace" do
   folder = on_arch_conditional arm: "ARM"
 
   on_arm do
-    version "2.4.2024020201,1709200637,020222"
-    sha256 "4667f3f73a68c6687a50bec3180aac063367556b7494e1f284b3d36ef3eeb63e"
+    version "2.9.2024073001,1722929385,073117"
+    sha256 "7241e7c508332bddb221822c5517c84d54d3bfc3e0e192f99849bca38bd4709e"
   end
   on_intel do
-    version "2.4.2024020201,1709191590,020222"
-    sha256 "cb42005491805b1d4c302eb0d513ff22bf348d588b2227b1476e555bc045cff5"
+    version "2.9.2024073001,1722929262,073122"
+    sha256 "b48516682d18b7dd22357c1c1355160a6d66632d205aa32cc5ced2c01319f73e"
   end
 
   url "https://update.zenithspace.net/app/APP_ZSPACE_DESKTOP_MAC#{folder}/V#{version.csv.first}/zspace/#{version.csv.second}/zspace_mac_#{arch}_#{version.csv.first}_#{version.csv.third}.dmg",
@@ -22,7 +22,7 @@ cask "zspace" do
     url "https://upgrade.zenithspace.net/upgrade_server/v2/check_upgrade?app_id=APP_ZSPACE_DESKTOP_MAC#{folder}&app_version=V0.0.0&nas_id=&plat=app&channel=zspace&skip_app_sync_upgrade=1"
     regex(%r{v?(\d+(?:\.\d+)+)/zspace/(\d+)/zspace[._-]mac[._-]#{arch}[._-](?:\d+(?:\.\d+)+)[._-](\d+)\.dmg}i)
     strategy :json do |json, regex|
-      json["data"]["download_url"]&.scan(regex)&.map { |match| "#{match[0]},#{match[1]},#{match[2]}" }
+      json.dig("data", "download_url")&.scan(regex)&.map { |match| "#{match[0]},#{match[1]},#{match[2]}" }
     end
   end
 

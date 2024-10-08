@@ -1,5 +1,5 @@
 cask "yandex-cloud-cli" do
-  version "0.118.0"
+  version "0.132.1"
   sha256 :no_check
 
   url "https://storage.yandexcloud.net/yandexcloud-yc/install.sh",
@@ -11,20 +11,20 @@ cask "yandex-cloud-cli" do
   # This can return a page with a CAPTCHA instead of the expected content
   # (e.g. when the check is run in the homebrew/cask CI environment).
   livecheck do
-    url "https://cloud.yandex.com/en/docs/cli/release-notes"
+    url "https://yandex.cloud/en/docs/cli/release-notes"
     regex(/Version\s+(\d+(?:\.\d+)+)\s+\(/i)
   end
 
   installer script: {
     executable: "install.sh",
-    args:       ["-i", "#{staged_path}/#{token}", "-n"],
-  }
-  installer script: {
-    executable: "yandex-cloud-cli/bin/yc",
-    args:       ["components", "post-update"],
+    args:       ["-i", "#{staged_path}/#{token}", "-r", "/dev/null"],
   }
   binary "yandex-cloud-cli/bin/docker-credential-yc"
   binary "yandex-cloud-cli/bin/yc"
+  binary "yandex-cloud-cli/completion.zsh.inc",
+         target: "#{HOMEBREW_PREFIX}/share/zsh/site-functions/_yc"
+  binary "yandex-cloud-cli/completion.bash.inc",
+         target: "#{HOMEBREW_PREFIX}/etc/bash_completion.d/yc"
 
   uninstall delete: "#{staged_path}/#{token}"
 

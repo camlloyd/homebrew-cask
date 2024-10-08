@@ -1,6 +1,6 @@
 cask "unity-webgl-support-for-editor" do
-  version "2023.2.12f1,19eeb3b320af"
-  sha256 "7c04a8cd46e1d6cdf750d5cef5ba19a008bf349809dc2316351788966489d9aa"
+  version "2023.2.20f1,0e25a174756c"
+  sha256 "be1add358e0d500456314c7dcc863d757132a5fcfc9a878d7abe8b8c0f1125d4"
 
   url "https://download.unity3d.com/download_unity/#{version.csv.second}/MacEditorTargetInstaller/UnitySetup-WebGL-Support-for-Editor-#{version.csv.first}.pkg",
       verified: "download.unity3d.com/download_unity/"
@@ -9,14 +9,7 @@ cask "unity-webgl-support-for-editor" do
   homepage "https://unity.com/products"
 
   livecheck do
-    url "https://public-cdn.cloud.unity3d.com/hub/prod/releases-darwin.json"
-    regex(%r{
-        /download_unity/(\h+)/MacEditorTargetInstaller
-        /UnitySetup-WebGL-Support-for-Editor-(\d+(?:\.\d+)+[a-z]*\d*)\.pkg
-      }ix)
-    strategy :page_match do |page, regex|
-      page.scan(regex).map { |match| "#{match[1]},#{match[0]}" }
-    end
+    cask "unity"
   end
 
   depends_on cask: "unity"

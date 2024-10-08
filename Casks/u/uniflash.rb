@@ -1,6 +1,6 @@
 cask "uniflash" do
-  version "8.6.0.4688"
-  sha256 "1b496e0719fe6c21d7ba1a5602d18906fd1d9ddf10a5aef3d59b0fa2f458c212"
+  version "8.8.0.4946"
+  sha256 "b55162b1c027e3014bfaf8986900444ae03dadad8f68c546b882b6a18fed6792"
 
   url "https://dr-download.ti.com/software-development/software-programming-tool/MD-QeJBJLj8gq/#{version.major_minor_patch}/uniflash_sl.#{version}.dmg"
   name "TI UniFlash"

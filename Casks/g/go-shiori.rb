@@ -1,11 +1,11 @@
 cask "go-shiori" do
   arch arm: "aarch64", intel: "x86_64"
 
-  version "1.5.5"
-  sha256 arm:   "4594adfa928a090b7c2aa59f133aaf100bf12c3e2b03dc1d3111dce248d2e27f",
-         intel: "155abc39774ded50441d078d1e74163a46672c0635c42624232654269fe0abdf"
+  version "1.7.1"
+  sha256 arm:   "299ca98734c59d59b6cf12c9e05b7743a8b237f8049e90695433497c40386334",
+         intel: "4a5b29f2800fca511d402a5444867af9a483d19bdea25c6eb3c3c5e46e6eb4dc"
 
-  url "https://github.com/go-shiori/shiori/releases/download/v#{version}/shiori_Darwin_#{arch}.tar.gz"
+  url "https://github.com/go-shiori/shiori/releases/download/v#{version}/shiori_Darwin_#{arch}_#{version}.tar.gz"
   name "Shiori"
   desc "Shiori is a simple bookmarks manager written in the Go language"
   homepage "https://github.com/go-shiori/shiori"

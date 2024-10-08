@@ -1,8 +1,11 @@
 cask "badlion-client" do
-  version "4.1.0"
-  sha256 "72f46acaddc6dd60a8af111301a8b8c1ba929733697abd36e92b280a7514609f"
+  arch arm: "-arm64"
 
-  url "https://client-updates.badlion.net/Badlion%20Client-#{version}.dmg"
+  version "4.4.1"
+  sha256 arm:   "959879e54d5f09c27761b730aeb6d958215d5b88550cc3430b83d7427c72729d",
+         intel: "53b82e218e1403147b9d86fe4a6752eff5ec8de564b8c5684b069a2baeed1bbc"
+
+  url "https://client-updates.badlion.net/Badlion%20Client-#{version}#{arch}.dmg"
   name "Badlion Client"
   desc "Minecraft launcher"
   homepage "https://www.badlion.net/"
@@ -12,11 +15,17 @@ cask "badlion-client" do
     strategy :electron_builder
   end
 
+  auto_updates true
+
   app "Badlion Client.app"
 
   zap trash: [
     "~/Library/Application Support/Badlion Client",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/net.badlion.client.sfl*",
     "~/Library/Caches/net.badlion.client",
     "~/Library/Caches/net.badlion.client.ShipIt",
+    "~/Library/Logs/Badlion Client",
+    "~/Library/Preferences/net.badlion.client.plist",
+    "~/Library/Saved Application State/net.badlion.client.savedState",
   ]
 end

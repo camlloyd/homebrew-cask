@@ -1,6 +1,6 @@
 cask "podpisuj" do
-  version "5.7.64"
-  sha256 "2644e97d7fc78405f020d08e8d4580f9f858c0ef9f41a00f41c1300e2704bc77"
+  version "5.7.75"
+  sha256 "28d3ee0930409da0e7abbf2cc55b71d23ff74ffc1bc840afe41da6386d9077bd"
 
   url "https://www.podpisuj.sk/staticweb/install/podpisuj-#{version}.dmg"
   name "Podpisuj"
@@ -22,5 +22,6 @@ cask "podpisuj" do
 
   caveats do
     license "https://www.podpisuj.sk/privacy"
+    requires_rosetta
   end
 end

@@ -12,5 +12,14 @@ cask "macwinzipper" do
     regex(%r{href=.*?/MacWinZipper[._-]v?(\d+(?:\.\d+)+)\.dmg}i)
   end
 
+  depends_on macos: ">= :sierra"
+
   app "MacWinZipper.app"
+
+  zap trash: [
+    "~/Library/Caches/bz.tida.MacWinZipper",
+    "~/Library/HTTPStorages/bz.tida.MacWinZipper",
+    "~/Library/Preferences/bz.tida.MacWinZipper.plist",
+    "~/Library/Saved Application State/bz.tida.MacWinZipper.savedState",
+  ]
 end

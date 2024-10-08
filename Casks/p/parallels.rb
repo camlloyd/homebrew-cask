@@ -1,6 +1,6 @@
 cask "parallels" do
-  version "19.2.1-54832"
-  sha256 "3e64121a825b074f90eede7a14e17139543ce8224ba806ba3d39d62f1e42ce90"
+  version "20.1.0-55732"
+  sha256 "58a62c2dcafb9ba5408d866ee0137169aac8ef1fdaee89e56a542957f430b34c"
 
   url "https://download.parallels.com/desktop/v#{version.major}/#{version}/ParallelsDesktop-#{version}.dmg"
   name "Parallels Desktop"
@@ -8,8 +8,8 @@ cask "parallels" do
   homepage "https://www.parallels.com/products/desktop/"
 
   livecheck do
-    url "https://kb.parallels.com/129860"
-    regex(/<h2[^>]*?>[^<]*?(\d+(?:\.\d+)+)(?:\s*|&nbsp;)\((\d+)\)/i)
+    url "https://kb.parallels.com/130212"
+    regex(/<p[^>]*?>[^<]*?(\d+(?:\.\d+)+)(?:\s*|&nbsp;)\((\d+)\)/i)
     strategy :page_match do |page, regex|
       page.scan(regex).map { |match| "#{match[0]}-#{match[1]}" }
     end
@@ -17,13 +17,14 @@ cask "parallels" do
 
   auto_updates true
   conflicts_with cask: [
-    "homebrew/cask-versions/parallels12",
-    "homebrew/cask-versions/parallels13",
-    "homebrew/cask-versions/parallels14",
-    "homebrew/cask-versions/parallels15",
-    "homebrew/cask-versions/parallels16",
-    "homebrew/cask-versions/parallels17",
-    "homebrew/cask-versions/parallels18",
+    "parallels@12",
+    "parallels@13",
+    "parallels@14",
+    "parallels@15",
+    "parallels@16",
+    "parallels@17",
+    "parallels@18",
+    "parallels@19",
   ]
   depends_on macos: ">= :monterey"
 
@@ -71,6 +72,7 @@ cask "parallels" do
         "~/Library/Group Containers/*.com.parallels.Desktop",
         "~/Library/Logs/parallels.log",
         "~/Library/Parallels/Applications Menus",
+        "~/Library/Parallels/Downloads",
         "~/Library/Parallels/Parallels Desktop",
         "~/Library/Preferences/com.parallels.desktop.console.LSSharedFileList.plist",
         "~/Library/Preferences/com.parallels.desktop.console.plist",

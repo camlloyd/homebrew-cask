@@ -1,6 +1,6 @@
 cask "popo" do
-  version "3.87.0,1705568803652"
-  sha256 "6bd21f268654c5e2e2ecfedfdee172d2ceef6a30e74ae61044b31407f11204c1"
+  version "4.12.0,1725528047765"
+  sha256 "79a03cb5414ab308ea142bf07cadc145746cd055ae0468e83a5c860d5d5a48ed"
 
   url "https://popo.netease.com/file/popomac/POPO-setup_prod_#{version.csv.second}.dmg"
   name "NetEase POPO"
@@ -16,6 +16,8 @@ cask "popo" do
       "#{match[1]},#{match[2]}"
     end
   end
+
+  depends_on macos: ">= :catalina"
 
   app "popo_mac.app"
 

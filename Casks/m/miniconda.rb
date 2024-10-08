@@ -1,9 +1,9 @@
 cask "miniconda" do
   arch arm: "arm64", intel: "x86_64"
 
-  version "py312_24.1.2-0"
-  sha256 arm:   "1c277b1ec046fd1b628390994e3fa3dbac0e364f44cd98b915daaa67a326c66a",
-         intel: "bc45a2ceea9341579532847cc9f29a9769d60f12e306bba7f0de6ad5acdd73e9"
+  version "py312_24.7.1-0"
+  sha256 arm:   "e7ef5a899f9383d14d5b15aef61d54a8cd9bf3c4de18a372af0455d8f5f78cd2",
+         intel: "5cfb85d81d94dfe3ef3265f2247aef32a35aeb450ea71c3a204cefed384fb87d"
 
   url "https://repo.anaconda.com/miniconda/Miniconda3-#{version}-MacOSX-#{arch}.sh",
       verified: "repo.anaconda.com/miniconda/"
@@ -20,7 +20,10 @@ cask "miniconda" do
   end
 
   auto_updates true
-  conflicts_with cask: "miniforge"
+  conflicts_with cask: [
+    "mambaforge",
+    "miniforge",
+  ]
   container type: :naked
 
   installer script: {

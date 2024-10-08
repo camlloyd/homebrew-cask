@@ -1,6 +1,6 @@
 cask "trilium-notes" do
-  version "0.63.3"
-  sha256 "3a09cca9a7daf5d60e6f565528d8a523c4cda1e206a770acb3203c991c323555"
+  version "0.63.7"
+  sha256 "c110cd7d6fdcdfec9d833937f09e611af967786e3fa838673d6274a7268b0b22"
 
   url "https://github.com/zadam/trilium/releases/download/v#{version}/trilium-mac-x64-#{version}.zip"
   name "Trilium Notes"
@@ -20,4 +20,8 @@ cask "trilium-notes" do
     "~/Library/Preferences/com.electron.trilium-notes.plist",
     "~/Library/Saved Application State/com.electron.trilium-notes.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

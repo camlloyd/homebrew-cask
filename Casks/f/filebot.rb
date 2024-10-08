@@ -1,9 +1,9 @@
 cask "filebot" do
   arch arm: "arm64", intel: "x64"
 
-  version "5.1.3"
-  sha256 arm:   "2b9fc1cf0349eadac549f26e3509fdee2e6d3296d12d85c5004be4ec1360fc99",
-         intel: "e9971b8a412deb08e7d8bccdb05b415eb099a9948bcab5127dad811b39ad7b27"
+  version "5.1.5"
+  sha256 arm:   "de401df6ef11432ae95a836d5ac210935a438673964416caf7881552f666dc3f",
+         intel: "7a6cb81d7d549723a241c40b48f3f53acb30732783abadfe2480516f3f2c013f"
 
   url "https://get.filebot.net/filebot/FileBot_#{version}/FileBot_#{version}_#{arch}.app.tar.xz"
   name "FileBot"

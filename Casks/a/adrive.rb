@@ -1,12 +1,13 @@
 cask "adrive" do
   arch arm: "-arm64"
 
-  version "4.13.0"
-  sha256 arm:   "937a00f7da3319e8be884f040b6b015aef3a65bf9c02ebbc806349ef169ab0bf",
-         intel: "7490dffa6013977ae75a4ce2cf0baab13c3a8f7f0cc9fd0e1df1b879769fa2d9"
+  version "6.4.2"
+  sha256 arm:   "0e1260077a035dcdb6cc993f01ec954d9baa3d26af8b8f369b420a63e21c1cd9",
+         intel: "3fbbe2243cedd87d3d58e0cfd425f2c65b9d9ea8fa966b234846798a7d13afb8"
 
   url "https://cdn.aliyundrive.net/downloads/apps/desktop/aDrive-#{version}#{arch}.dmg",
-      verified: "cdn.aliyundrive.net/"
+      verified:   "cdn.aliyundrive.net/",
+      user_agent: :fake
   name "Aliyundrive"
   name "阿里云盘"
   desc "Intelligent cloud storage platform"

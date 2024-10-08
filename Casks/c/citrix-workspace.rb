@@ -1,16 +1,17 @@
 cask "citrix-workspace" do
-  version "23.11.0.67"
-  sha256 "76ec44f67d35477089cb60a5bb95d824ecbc24b6f8cc391035534868a2688468"
+  version "24.09.0.54"
+  sha256 "cc110a56d130afbe7f4fba3f926cbc426e182eaa41d8d936f9738562fd6e54c0"
 
   url "https://downloadplugins.citrix.com/ReceiverUpdates/Prod/Receiver/Mac/CitrixWorkspaceAppUniversal#{version}.pkg"
   name "Citrix Workspace"
   desc "Managed desktop virtualization solution"
-  homepage "https://www.citrix.com/"
+  homepage "https://docs.citrix.com/en-us/citrix-workspace"
 
   livecheck do
     url "https://downloadplugins.citrix.com/ReceiverUpdates/Prod/catalog_macos2.xml"
     strategy :xml do |xml|
-      xml.get_elements("//Installers[@name='WorkspaceApp']/Installer/Version").map(&:text)
+      xml.get_elements("//Installers[@name='WorkspaceApp']/Installer/Version")
+         .map { |item| item.text&.strip }
     end
   end
 
@@ -33,7 +34,13 @@ cask "citrix-workspace" do
               "com.citrix.receiver.nomas",
               "com.citrix.ReceiverHelper",
             ],
-            pkgutil:   "com.citrix.ICAClient"
+            pkgutil:   [
+              "com.citrix.common",
+              "com.citrix.enterprisebrowserinstaller",
+              "com.citrix.ICAClient",
+              "com.citrix.ICAClientcwa",
+              "com.citrix.ICAClienthdx",
+            ]
 
   zap trash: [
     "~/Library/Application Support/Citrix Receiver",

@@ -1,6 +1,6 @@
 cask "aws-vpn-client" do
-  version "3.9.1"
-  sha256 "9bba4b27a635e75038703e2cf4cd814aa75306179fac8e500e2c7af4e899e971"
+  version "4.0.0"
+  sha256 "d574475a80b614499c97ae75612ef1ff905bb4aa1b5f7109420e80bf95aefcbd"
 
   url "https://d20adtppz83p9s.cloudfront.net/OSX/#{version}/AWS_VPN_Client.pkg",
       verified: "d20adtppz83p9s.cloudfront.net/"
@@ -9,7 +9,7 @@ cask "aws-vpn-client" do
   homepage "https://aws.amazon.com/vpn/"
 
   livecheck do
-    url "https://docs.aws.amazon.com/vpn/latest/clientvpn-user/client-vpn-connect-macos.html"
+    url "https://docs.aws.amazon.com/vpn/latest/clientvpn-user/client-vpn-connect-macos-release-notes.html"
     regex(%r{href=.*?v?(\d+(?:\.\d+)+)/AWS_VPN_Client\.pkg}i)
   end
 

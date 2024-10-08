@@ -1,8 +1,8 @@
 cask "musescore" do
-  version "4.2.1.240230937"
-  sha256 "c694c8002472faca507386ae9a44d44a37d08581d769e0ecf13f55bf783afd0e"
+  version "4.4.2.242570931"
+  sha256 "9c72c4d5d3a8bc6edcf02d3c4d682b571f11e411a712dbfd082d7c9e95b5f199"
 
-  url "https://github.com/musescore/MuseScore/releases/download/v#{version.major_minor_patch}/MuseScore-#{version}.dmg",
+  url "https://github.com/musescore/MuseScore/releases/download/v#{version.major_minor_patch}/MuseScore-Studio-#{version}.dmg",
       verified: "github.com/musescore/MuseScore/"
   name "MuseScore"
   desc "Open-source music notation software"
@@ -10,7 +10,7 @@ cask "musescore" do
 
   livecheck do
     url :url
-    regex(/^MuseScore[._-]v?(\d+(?:\.\d+)+)\.dmg$/i)
+    regex(/^MuseScore[._-]Studio[._-]v?(\d+(?:\.\d+)+)\.dmg$/i)
     strategy :github_latest do |json, regex|
       json["assets"]&.map do |asset|
         match = asset["name"]&.match(regex)

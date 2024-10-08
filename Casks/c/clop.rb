@@ -1,6 +1,6 @@
 cask "clop" do
-  version "2.5.4"
-  sha256 "ca46004460ecd3dc5f60446cfc86a4d8d4909303d139115cd97172644d294359"
+  version "2.6.3"
+  sha256 "47b8785c354b00c8f65f3850b01c478b58078370892a38b3bd264a3ff77a4004"
 
   url "https://files.lowtechguys.com/releases/Clop-#{version}.dmg"
   name "Clop"
@@ -18,8 +18,14 @@ cask "clop" do
   app "Clop.app"
 
   zap trash: [
+    "~/Library/Application Scripts/com.lowtechguys.Clop",
+    "~/Library/Application Scripts/com.lowtechguys.Clop.FinderOptimiser",
     "~/Library/Application Support/Clop",
     "~/Library/Caches/Clop",
+    "~/Library/Containers/com.lowtechguys.Clop.FinderOptimiser",
+    "~/Library/Daemon Containers/54F7B6C1*/Data/com.apple.kvs/ChangeTokens/NoEncryption/Clop/*.com.lowtechguys.Clop",
+    "~/Library/HTTPStorages/com.lowtechguys.Clop",
+    "~/Library/HTTPStorages/com.lowtechguys.Clop.binarycookies",
     "~/Library/Preferences/com.lowtechguys.Clop.plist",
   ]
 end

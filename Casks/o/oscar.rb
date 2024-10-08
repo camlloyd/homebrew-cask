@@ -1,8 +1,8 @@
 cask "oscar" do
-  version "1.5.1"
-  sha256 "09b1ff0499b6ec90e22069ce44d68b1e94f7d456cb93a5817b412fa20c891580"
+  version "1.5.3"
+  sha256 "24e894bf058867b29bb94edbf7695b86c3705d5fd63efc5e812b41d8d7d369e0"
 
-  url "https://www.apneaboard.com/OSCAR/OSCAR-#{version}.dmg",
+  url "https://www.apneaboard.com/OSCAR/#{version}/OSCAR-#{version}.dmg",
       verified: "apneaboard.com/OSCAR/"
   name "OSCAR"
   desc "CPAP Analysis Reporter"
@@ -21,4 +21,8 @@ cask "oscar" do
     "~/Library/Preferences/org.oscar-team.OSCAR.plist",
     "~/Library/Saved Application State/org.oscar-team.OSCAR.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

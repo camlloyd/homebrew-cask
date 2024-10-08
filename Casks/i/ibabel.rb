@@ -5,7 +5,7 @@ cask "ibabel" do
   url "https://macinchem.org/wp-content/uploads/#{version.csv.second}/#{version.csv.third}/iBabel.zip"
   name "iBabel"
   desc "GUI for the cheminformatics toolkit OpenBabel"
-  homepage "https://www.macinchem.org/ibabel/"
+  homepage "https://macinchem.org/ibabel/"
 
   livecheck do
     url :homepage
@@ -15,7 +15,7 @@ cask "ibabel" do
 
       cask = CaskLoader.load(__FILE__)
       download_url = "https://macinchem.org/wp-content/uploads/#{match[1]}/#{match[2]}/iBabel.zip"
-      app_version = Homebrew::Livecheck::Strategy::ExtractPlist.find_versions(cask: cask,
+      app_version = Homebrew::Livecheck::Strategy::ExtractPlist.find_versions(cask:,
                                                                               url:  download_url)[:matches].values.max
       next if app_version.blank?
 

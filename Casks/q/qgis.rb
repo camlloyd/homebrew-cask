@@ -1,8 +1,8 @@
 cask "qgis" do
-  version "3.36.0,20240223_123737"
-  sha256 "d26e0ca3105c2a68aaeba3dd9f7654c487ea1540d24999519263c1eae3e3406c"
+  version "3.38.3,20240913_122840"
+  sha256 "1262d47a824c3911112e6b5f8bac19731df04aca3a81df8fac5bce9e5d80d0bf"
 
-  url "https://qgis.org/downloads/macos/pr/qgis_pr_final-#{version.csv.first.dots_to_underscores}_#{version.csv.second}.dmg"
+  url "https://download.qgis.org/downloads/macos/pr/qgis_pr_final-#{version.csv.first.dots_to_underscores}_#{version.csv.second}.dmg"
   name "QGIS"
   desc "Geographic Information System"
   homepage "https://www.qgis.org/"
@@ -17,6 +17,8 @@ cask "qgis" do
     end
   end
 
+  depends_on macos: ">= :high_sierra"
+
   app "QGIS.app"
 
   zap trash: [
@@ -24,4 +26,8 @@ cask "qgis" do
     "~/Library/Caches/QGIS",
     "~/Library/Saved Application State/org.qgis.qgis*.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

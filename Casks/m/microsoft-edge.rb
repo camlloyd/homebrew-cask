@@ -2,17 +2,17 @@ cask "microsoft-edge" do
   linkid = on_arch_conditional arm: "2093504", intel: "2069148"
 
   on_arm do
-    version "122.0.2365.63,73a07aa6-b8e8-4555-95b1-a709271ee36a"
-    sha256 "654f1092c13a6c85101ebf42a4d8cf0a2ffb1894ccbcaf0078a252a709b8ae71"
+    version "129.0.2792.79,94d05e3c-e429-4fb5-8e83-049c4e0cf0ab"
+    sha256 "79f637b3b893a37aa6a8310fc2b39402279706cda440cfb8473cec63efdafc1a"
   end
   on_intel do
-    version "122.0.2365.63,21a73de0-1704-4568-b12a-a3b21dbec451"
-    sha256 "fa149ad7718c2de493d9d899788677931763a461c2757905d4b4b5dcf9c4eb0c"
+    version "129.0.2792.79,af6ae3ac-8985-479e-89bd-5e1efc3aaffd"
+    sha256 "772c2fe7f31d4263b158a4944d7010111588b66dae723f4d6e78d7a6ca53d7cd"
   end
 
   url "https://msedge.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/#{version.csv.second}/MicrosoftEdge-#{version.csv.first}.pkg"
   name "Microsoft Edge"
-  desc "Web browser"
+  desc "Multi-platform web browser"
   homepage "https://www.microsoft.com/en-us/edge?form="
 
   livecheck do
@@ -24,6 +24,7 @@ cask "microsoft-edge" do
   end
 
   auto_updates true
+  depends_on macos: ">= :big_sur"
 
   pkg "MicrosoftEdge-#{version.csv.first}.pkg",
       choices: [
@@ -37,7 +38,7 @@ cask "microsoft-edge" do
   uninstall launchctl: [
               "com.microsoft.EdgeUpdater.update-internal.109.0.1518.89.system",
               "com.microsoft.EdgeUpdater.update.system",
-              "com.microsoft.EdgeUpdater.wake.109.0.1518.89.system",
+              "com.microsoft.EdgeUpdater.wake.system",
             ],
             pkgutil:   "com.microsoft.edgemac"
 
@@ -45,17 +46,18 @@ cask "microsoft-edge" do
       trash:  [
         "~/Library/Application Scripts/com.microsoft.edgemac.wdgExtension",
         "~/Library/Application Support/Microsoft Edge",
-        "~/Library/Application Support/Microsoft/EdgeUpdater",
         "~/Library/Caches/com.microsoft.edgemac",
-        "~/Library/Caches/com.microsoft.EdgeUpdater",
         "~/Library/Caches/Microsoft Edge",
         "~/Library/Containers/com.microsoft.edgemac.wdgExtension",
-        "~/Library/HTTPStorages/com.microsoft.edge*",
+        "~/Library/HTTPStorages/com.microsoft.edgemac",
         "~/Library/LaunchAgents/com.microsoft.EdgeUpdater.*.plist",
-        "~/Library/Microsoft/EdgeUpdater",
+        "~/Library/Microsoft/MicrosoftSoftwareUpdate/Actives/com.microsoft.edgemac",
         "~/Library/Preferences/com.microsoft.edgemac.plist",
-        "~/Library/Saved Application State/com.microsoft.edgemac.*",
+        "~/Library/Saved Application State/com.microsoft.edgemac.savedState",
         "~/Library/WebKit/com.microsoft.edgemac",
       ],
-      rmdir:  "/Library/Application Support/Microsoft"
+      rmdir:  [
+        "/Library/Application Support/Microsoft",
+        "~/Library/Microsoft",
+      ]
 end

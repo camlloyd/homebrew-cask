@@ -1,8 +1,11 @@
 cask "supernotes" do
-  version "3.0.8"
-  sha256 "6b0e9b2d5700c7f9832852e1f321d080fb237578c96c5d98bdbe8dd95429421b"
+  arch arm: "-arm64"
 
-  url "https://download.supernotes.app/Supernotes-#{version}.dmg"
+  version "3.1.6"
+  sha256 arm:   "eaed43ea02d6a62e817c6d214993b35ead058f791a19ad0dc984941616243c85",
+         intel: "01f51c61f52703d6dc58318f09d1e174e47c8d89147d66ef43c0284996efed06"
+
+  url "https://download.supernotes.app/Supernotes-#{version}#{arch}.dmg"
   name "Supernotes"
   desc "Collaborative note-taking app"
   homepage "https://supernotes.app/"

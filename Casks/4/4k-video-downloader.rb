@@ -1,15 +1,15 @@
 cask "4k-video-downloader" do
-  version "4.29.0"
-  sha256 "4dca19ffe523c42c209e382937d98f2f920c7864cacdc31c959be6de9c8c5a43"
+  version "4.32.5"
+  sha256 "d7c8248e34f11b1e376de1836f3a3c54a206439e6fb01739ac53ddadef780994"
 
-  url "https://dl.4kdownload.com/app/4kvideodownloader_#{version.major_minor_patch}.dmg"
+  url "https://dl.4kdownload.com/app/4kvideodownloader_#{version.major_minor_patch}_x64.dmg"
   name "4K Video Downloader"
   desc "Free video downloader"
   homepage "https://www.4kdownload.com/products/product-videodownloader"
 
   livecheck do
     url "https://www.4kdownload.com/download"
-    regex(%r{href=.*?/4kvideodownloader[._-]v?(\d+(?:\.\d+)+)\.dmg}i)
+    regex(%r{href=.*?/4kvideodownloader[._-]v?(\d+(?:\.\d+)+)[^"' >]*?\.dmg}i)
   end
 
   depends_on macos: ">= :high_sierra"
@@ -23,4 +23,8 @@ cask "4k-video-downloader" do
     "~/Library/Preferences/com.openmedia.4kvideodownloader.plist",
     "~/Library/Saved Application State/com.openmedia.4kvideodownloader.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

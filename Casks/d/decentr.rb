@@ -1,9 +1,9 @@
 cask "decentr" do
   arch arm: "arm", intel: "x86"
 
-  version "1.5.10"
-  sha256 arm:   "5dc09b99928aebde20696dbce4b4b86432bf1f188f3bb2046111dca02b30f65a",
-         intel: "2e13598aed5a86810b87e567c9efc2695aa5a1e4499913c306c94fda4ee62c0c"
+  version "1.8.0"
+  sha256 arm:   "8696a855cd466f39e2cbd5878a5402fbc6af8a8a8d8323a003a4e983ca79ba14",
+         intel: "94eaf700d836f417b6f8adfb82eb412bb4ec6359764229f393c14320c0966ab2"
 
   url "https://decentr.net/MacOS_#{arch}_Decentr_#{version}.dmg"
   name "Decentr"
@@ -14,6 +14,8 @@ cask "decentr" do
     url :homepage
     regex(/href=.*?MacOS[._-]#{arch}[._-]Decentr[._-]v?(\d+(?:\.\d+)+)\.dmg/i)
   end
+
+  depends_on macos: ">= :catalina"
 
   app "Decentr.app"
 

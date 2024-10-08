@@ -13,5 +13,11 @@ cask "quassel" do
     strategy :github_latest
   end
 
+  depends_on macos: ">= :high_sierra"
+
   app "Quassel.app"
+
+  caveats do
+    requires_rosetta
+  end
 end

@@ -1,6 +1,6 @@
 cask "crossover" do
-  version "24.0.0"
-  sha256 "4965e0a407c28d9fc3145fdc40bf32e6f64b29f80c2eaec7a4e6d70f2d22e716"
+  version "24.0.5"
+  sha256 "b8e9660612c2ce6eed662e1e4b70b3a55070dfdfc0c0db3f726d8ce26da3d2bf"
 
   url "https://media.codeweavers.com/pub/crossover/cxmac/demo/crossover-#{version}.zip"
   name "CrossOver"
@@ -32,4 +32,8 @@ cask "crossover" do
     "~/Library/Preferences/com.codeweavers.*",
     "~/Library/Saved Application State/com.codeweavers.CrossOver*",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

@@ -1,6 +1,6 @@
 cask "beyond-compare" do
-  version "4.4.7.28397"
-  sha256 "a9ba4cea125bbfe00fa3e79de39937197ae5d479d94710f5b93da5bda377a0ce"
+  version "5.0.2.30045"
+  sha256 "b1b90d36ba0d5baefec67ef823c3923ae7ea29c38224ed44214e2df9868a35fc"
 
   url "https://www.scootersoftware.com/files/BCompareOSX-#{version}.zip"
   name "Beyond Compare"
@@ -13,16 +13,18 @@ cask "beyond-compare" do
   end
 
   auto_updates true
-  conflicts_with cask: "homebrew/cask-versions/beyond-compare-beta"
+  conflicts_with cask: "beyond-compare@beta"
 
   app "Beyond Compare.app"
   binary "#{appdir}/Beyond Compare.app/Contents/MacOS/bcomp"
 
   zap trash: [
-    "~/Library/Application Support/Beyond Compare",
+    "~/Library/Application Support/Beyond Compare*",
     "~/Library/Caches/com.apple.helpd/Generated/Beyond Compare Help*",
     "~/Library/Caches/com.apple.helpd/Generated/com.ScooterSoftware.BeyondCompare.help*",
     "~/Library/Caches/com.ScooterSoftware.BeyondCompare",
+    "~/Library/Containers/com.ScooterSoftware.BeyondCompare.BCFinder",
+    "~/Library/Preferences/com.ScooterSoftware.BeyondCompare.plist",
     "~/Library/Saved Application State/com.ScooterSoftware.BeyondCompare.savedState",
   ]
 end

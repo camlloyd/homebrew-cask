@@ -1,8 +1,11 @@
 cask "kdenlive" do
-  version "23.08.4"
-  sha256 "48374f040af0e6e503854a9c8f390c2270792f8573190c970503778359f95e31"
+  arch arm: "arm64", intel: "x86_64"
 
-  url "https://cdn.download.kde.org/stable/kdenlive/#{version.major_minor}/macOS/kdenlive-#{version}.dmg",
+  version "24.08.1"
+  sha256 arm:   "8a65821b31bda8854bfcea2238984a268919399131b21dd831bd0dc5325e72e9",
+         intel: "ff9dcdbfea95fb85d93e41da5e548d68face9150521095d5d9d0b1b34fe7f350"
+
+  url "https://cdn.download.kde.org/stable/kdenlive/#{version.major_minor}/macOS/kdenlive-#{version}-#{arch}.dmg",
       verified: "cdn.download.kde.org/stable/kdenlive/"
   name "Kdenlive"
   desc "Free and Open Source Video Editor"
@@ -10,10 +13,10 @@ cask "kdenlive" do
 
   livecheck do
     url "https://kdenlive.org/en/download/"
-    regex(/href=.*?kdenlive[._-]v?(\d+(?:[.-]\d+)+)\.dmg/i)
+    regex(/href=.*?kdenlive[._-]v?(\d+(?:[.-]\d+)+)-#{arch}.dmg/i)
   end
 
-  depends_on macos: ">= :mojave"
+  depends_on macos: ">= :big_sur"
 
   app "kdenlive.app"
 

@@ -1,5 +1,5 @@
 cask "pdf-squeezer" do
-  version "4.5"
+  version "4.5.3"
   sha256 :no_check
 
   url "https://www.witt-software.com/downloads/pdfsqueezer/PDF%20Squeezer.dmg"
@@ -16,7 +16,7 @@ cask "pdf-squeezer" do
     end
   end
 
-  depends_on macos: ">= :catalina"
+  depends_on macos: ">= :big_sur"
 
   app "PDF Squeezer.app"
 
@@ -26,4 +26,8 @@ cask "pdf-squeezer" do
     "~/Library/Containers/com.witt-software.PDF-Squeezer",
     "~/Library/Group Containers/group.witt-software.com.PDF-Squeezer",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

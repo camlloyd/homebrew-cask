@@ -1,9 +1,9 @@
 cask "truhu" do
-  version "303"
-  sha256 "f70ec16a493c8b4f100331e24147bd8b82674c01246f6a6fc766359f50d872b8"
+  version "319"
+  sha256 "eef51c5053f87185aa5deb7924c05965e45d2e53f7fca4defc59ad58c651f9ce"
 
-  url "https://truhu-mobile-builds.s3.us-west-2.amazonaws.com/TruHu+Desktop+#{version}.dmg",
-      verified: "truhu-mobile-builds.s3.us-west-2.amazonaws.com/"
+  url "https://truhu-mobile-builds.s3.amazonaws.com/TruHu+Desktop+#{version}.dmg",
+      verified: "truhu-mobile-builds.s3.amazonaws.com/"
   name "TruHu"
   desc "Display calibration utility"
   homepage "https://truhu.app/"

@@ -1,9 +1,9 @@
 cask "sigil" do
   arch arm: "arm64", intel: "x86_64"
 
-  version "2.0.2"
-  sha256 arm:   "bd7f5586974ed10334e11e53b71df5c2457b76445b8b3a30ae6fc664b4938030",
-         intel: "ae3783f8a9c4dc5e0635e68fbc484e92dfb4969135594ab19ba3eddac0706007"
+  version "2.3.1"
+  sha256 arm:   "ea117e9d6491a1921469a0ebc274e0d646f14fc8cd059474759e3980b247dc2d",
+         intel: "05422dbac0a00ebbf8360f782f2cda16a768a22abb25cc3a06fb418d1e471194"
 
   url "https://github.com/Sigil-Ebook/Sigil/releases/download/#{version}/Sigil.app-#{version}-Mac-#{arch}.txz",
       verified: "github.com/Sigil-Ebook/Sigil/"
@@ -11,7 +11,7 @@ cask "sigil" do
   desc "EPUB ebook editor"
   homepage "https://sigil-ebook.com/"
 
-  depends_on macos: ">= :sierra"
+  depends_on macos: ">= :big_sur"
 
   app "Sigil.app"
 

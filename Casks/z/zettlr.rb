@@ -1,9 +1,9 @@
 cask "zettlr" do
   arch arm: "arm64", intel: "x64"
 
-  version "3.0.5"
-  sha256 arm:   "b94090ac66458b8dd08ed0805c1d14e7d9bdf9fd337be2a86ce8ad793cfb00cd",
-         intel: "7f29702fcf0f0c458e0c6bcf00e88c712d9c5f85d2b9883dd9c7f5aed29c651b"
+  version "3.2.2"
+  sha256 arm:   "68ef933b6a05faebbb36a9da5ebd4e1d66187902816cdf1301ab6b58c03e96be",
+         intel: "cfd5665029ab208edcfdcecf45de78366a0c34b3a67451ba2dc2c7a164fa86b7"
 
   url "https://github.com/Zettlr/Zettlr/releases/download/v#{version}/Zettlr-#{version}-#{arch}.dmg"
   name "Zettlr"

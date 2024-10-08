@@ -1,6 +1,6 @@
 cask "cisco-jabber" do
-  version "20231225070508"
-  sha256 "8e8a18e64ec37932b80da17d4eed7f0fa72bbdc4f6906eab181e4347ff67bbdd"
+  version "20240905082321"
+  sha256 "ef4369cfad2490cff48192dedee3ca659e58a87a4b318dcfc8ef540a8dbadddf"
 
   url "https://binaries.webex.com/jabberclientmac/#{version}/Install_Cisco-Jabber-Mac.pkg"
   name "Cisco Jabber"
@@ -28,4 +28,12 @@ cask "cisco-jabber" do
               "/Library/Application Support/Cisco/Unified Communications/Jabber/",
               "/Library/Logs/Jabber/",
             ]
+
+  zap trash: [
+    "~/Library/Application Support/Cisco/Unified Communications/Jabber",
+    "~/Library/Caches/com.cisco.Jabber",
+    "~/Library/Logs/Jabber",
+    "~/Library/Preferences/com.cisco.Jabber.plist",
+    "~/Library/WebKit/com.cisco.Jabber",
+  ]
 end

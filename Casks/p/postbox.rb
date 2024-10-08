@@ -1,6 +1,6 @@
 cask "postbox" do
-  version "7.0.60"
-  sha256 "d950938c1f221b6866cf9b0dd2fa1bce491746f6bc404c99a51448e27209e3f0"
+  version "7.0.64"
+  sha256 "9661ed5dbfe3f548b273a1fb70369b3b763986e2f284c50c5c31d6f95b6dc53c"
 
   url "https://d3nx85trn0lqsg.cloudfront.net/mac/postbox-#{version}-mac64.dmg",
       verified: "d3nx85trn0lqsg.cloudfront.net/mac/"
@@ -29,4 +29,8 @@ cask "postbox" do
     "~/Library/Preferences/com.postbox-inc.postbox.plist",
     "~/Library/Saved Application State/com.postbox-inc.postbox.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

@@ -1,6 +1,6 @@
 cask "code-composer-studio" do
-  version "12.6.0.00008"
-  sha256 "0558242def7ea2dc560febd8031231cd1dfa5d128869c95a3d6859cb0b679db2"
+  version "12.8.1.00005"
+  sha256 "b439b6f1a6601bf379a5e28306526a480afca00a45c67ddcd92acfd1fde58a8b"
 
   url "https://dr-download.ti.com/software-development/ide-configuration-compiler-or-debugger/MD-J1VdearkvK/#{version.major_minor_patch}/ccs_installer_osx_#{version}.dmg"
   name "Code Composer Studio (CCS)"
@@ -9,7 +9,7 @@ cask "code-composer-studio" do
 
   livecheck do
     url :homepage
-    regex(/href=.*?ccs[._-]installer[._-]osx[._-]v?(\d+(?:\.\d+)+)\.dmg/i)
+    regex(/href=.*?ccs[._-]installer[._-]osx[._-]?v?(\d+(?:\.\d+)+)\.dmg/i)
   end
 
   installer script: {

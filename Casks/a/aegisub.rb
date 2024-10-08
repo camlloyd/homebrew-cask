@@ -7,10 +7,8 @@ cask "aegisub" do
   desc "Create and modify subtitles"
   homepage "https://github.com/Aegisub/Aegisub"
 
-  livecheck do
-    url :url
-    strategy :github_latest
-  end
+  # https://github.com/Aegisub/Aegisub/issues/336
+  deprecate! date: "2024-09-06", because: :unmaintained
 
   app "Aegisub.app"
 
@@ -21,4 +19,8 @@ cask "aegisub" do
     "~/Library/Preferences/com.aegisub.aegisub.plist",
     "~/Library/Saved Application State/com.aegisub.aegisub.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

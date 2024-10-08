@@ -1,6 +1,6 @@
 cask "thorium" do
-  version "2.3.0"
-  sha256 "87680fb4bdf63f2dcaed9507f9af10a8e8f8f20412fcdc455f611eefc99458f6"
+  version "3.0.0"
+  sha256 "340c04e31e750de699a838aca643b4c2c966751d7ad0627cd33f531e1b596d65"
 
   url "https://github.com/edrlab/thorium-reader/releases/download/v#{version}/Thorium-#{version}.dmg",
       verified: "github.com/edrlab/thorium-reader/"
@@ -13,10 +13,16 @@ cask "thorium" do
     strategy :github_latest
   end
 
+  conflicts_with cask: "alex313031-thorium"
+
   app "Thorium.app"
 
   zap trash: [
     "~/Library/Application Support/EDRLab.ThoriumReader",
     "~/Library/Preferences/io.github.edrlab.thorium.plist",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

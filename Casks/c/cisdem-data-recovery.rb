@@ -1,5 +1,5 @@
 cask "cisdem-data-recovery" do
-  version "15.0.0"
+  version "17.5.0"
   sha256 :no_check
 
   url "https://download.cisdem.com/cisdem-datarecovery.dmg"
@@ -12,7 +12,7 @@ cask "cisdem-data-recovery" do
     regex(/(\d+(?:\.\d+)+)\s+\(\d+(?:-\d+)+\)/i)
   end
 
-  depends_on macos: ">= :sierra"
+  depends_on macos: ">= :high_sierra"
 
   app "Cisdem Data Recovery.app"
 

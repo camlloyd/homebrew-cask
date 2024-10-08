@@ -1,6 +1,6 @@
 cask "usmart-trade" do
-  version "3.27.4,24750781-4ed9-45c3-83c5-277929db5e81,2024-02-27"
-  sha256 "1af7f18b33a0a83b27f48231ab1d40f0363d53062e50a60b49cc8eaf50083d23"
+  version "3.28.2,fc0fd290-d88e-438a-b4d0-706ee50408e2,2024-09-19"
+  sha256 "8883e2b9d45619c701d66ac290792b210c098b160766a4f75f18afb2c6985787"
 
   url "https://jy-common-prd-1257884527.cos.ap-guangzhou.myqcloud.com/admin/app-version-file/#{version.csv.third}/#{version.csv.second}/uSMART%20Trade-#{version.csv.first}.dmg",
       verified: "jy-common-prd-1257884527.cos.ap-guangzhou.myqcloud.com/"
@@ -24,4 +24,8 @@ cask "usmart-trade" do
     "~/Library/Preferences/com.usmart.mac.test.plist",
     "~/Library/Saved Application State/com.usmart.mac.test.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

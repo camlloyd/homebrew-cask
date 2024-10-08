@@ -1,5 +1,5 @@
 cask "workspace-one-intelligent-hub" do
-  version "24.01.0.10"
+  version "24.07.1"
   sha256 :no_check
 
   url "https://packages.vmware.com/wsone/VMwareWorkspaceONEIntelligentHub.pkg",
@@ -9,8 +9,8 @@ cask "workspace-one-intelligent-hub" do
   homepage "https://www.getwsone.com/"
 
   livecheck do
-    url :url
-    strategy :extract_plist
+    url "https://docs-be.omnissa.com/api/bundle/workspace-one-intelligent-hub-for-macos-release-notesVSaaS/page/WorkspaceONEIntelligenHubmacOS-ReleaseNotes.html"
+    regex(/Intelligent\s+Hub\s+v?(\d+(?:\.\d+)+)/i)
   end
 
   auto_updates true

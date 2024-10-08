@@ -1,6 +1,6 @@
 cask "firefly" do
-  version "2.0.8"
-  sha256 "3a5080e1d3c168c3460f34f9fcbf2e82718f03e07d0cbd6c8c56b2effc0e71a6"
+  version "2.0.12"
+  sha256 "2f93d313a27ceea7604b5da7769fcee6a378a592f1b37a760fc4d8a4d5bb6e7c"
 
   url "https://dl.firefly.iota.org/firefly-iota-desktop-#{version}.dmg"
   name "Firefly"
@@ -29,4 +29,8 @@ cask "firefly" do
     "~/Library/Preferences/org.iota.firefly.plist",
     "~/Library/Saved Application State/org.iota.firefly.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

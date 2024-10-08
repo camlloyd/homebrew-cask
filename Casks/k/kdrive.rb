@@ -1,6 +1,6 @@
 cask "kdrive" do
-  version "3.5.8.20240227"
-  sha256 "d47ca14881d61e678548e849c9232647f58ae94cbbb4ec565421d8df8d50c743"
+  version "3.6.6.20241001"
+  sha256 "f9369b033c10fc8681b15420b7cffe3fca3521ad97ee22335928872e96e53c0b"
 
   url "https://download.storage.infomaniak.com/drive/desktopclient/kDrive-#{version}.pkg"
   name "kDrive"
@@ -11,7 +11,7 @@ cask "kdrive" do
     url "https://www.infomaniak.com/drive/latest"
     regex(/kDrive[._-](\d+(?:\.\d+)+)\.pkg/i)
     strategy :json do |json|
-      json["macos"]["downloadurl"]&.scan(regex)&.map { |match| (match[0]).to_s }
+      json.dig("macos", "downloadurl")&.scan(regex)&.map { |match| (match[0]).to_s }
     end
   end
 

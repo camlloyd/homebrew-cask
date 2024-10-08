@@ -2,9 +2,9 @@ cask "zoom" do
   arch arm: "arm64/"
   livecheck_folder = on_arch_conditional arm: "?archType=arm64"
 
-  version "5.17.10.30974"
-  sha256 arm:   "2561b2f237ba8450d348a3f1e060140cc25d8b9ff32a88f828ae70e84d2972c2",
-         intel: "94ed1fc96e5c6ad760299edc01085d01b7d05be11ec1d0a34e77be642dd45b7c"
+  version "6.2.3.40682"
+  sha256 arm:   "9299dc97a655b3f3b64d7b41859ff6d38f6326e51d62521ac6d2d7df021fa551",
+         intel: "801f29337118980e63176b3f5e86d5e6193bd6ad7ac7bea71ba336d2b59ab731"
 
   url "https://cdn.zoom.us/prod/#{version}/#{arch}zoomusInstallerFull.pkg"
   name "Zoom"
@@ -52,6 +52,7 @@ cask "zoom" do
     "~/Library/Application Scripts/*.ZoomClient3rd",
     "~/Library/Application Support/CloudDocs/session/containers/iCloud.us.zoom.videomeetings",
     "~/Library/Application Support/CloudDocs/session/containers/iCloud.us.zoom.videomeetings.plist",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/us.zoom*.sfl*",
     "~/Library/Application Support/CrashReporter/zoom.us*",
     "~/Library/Application Support/zoom.us",
     "~/Library/Caches/us.zoom.xos",
@@ -69,6 +70,7 @@ cask "zoom" do
     "~/Library/Preferences/us.zoom.xos.Hotkey.plist",
     "~/Library/Preferences/us.zoom.xos.plist",
     "~/Library/Preferences/us.zoom.ZoomAutoUpdater.plist",
+    "~/Library/Preferences/us.zoom.ZoomClips.plist",
     "~/Library/Preferences/ZoomChat.plist",
     "~/Library/Saved Application State/us.zoom.xos.savedState",
     "~/Library/WebKit/us.zoom.xos",

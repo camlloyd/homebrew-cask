@@ -1,9 +1,9 @@
 cask "jetbrains-gateway" do
   arch arm: "-aarch64"
 
-  version "2023.3.4"
-  sha256 arm:   "2e769fd9c28b33d34845d1b92cb12a13578f2d4c2f255c88a42fcb79a7cf848f",
-         intel: "5cf8720e0259c2bfd2474a5fd1db329cb48c10a8823ba0c29b0f3bde3ddbdf8a"
+  version "2024.2.3"
+  sha256 arm:   "5874e4969ac9f894f71e1ec6ac9caf3bbb9cd957b7be11a06850bd330ec69f5f",
+         intel: "b3b4439a5ac6ef464fb7c765a0438f09ff578a8922493969793c69d86b1d2de9"
 
   url "https://download.jetbrains.com/idea/gateway/JetBrainsGateway-#{version}#{arch}.dmg"
   name "jetbrains-gateway"
@@ -24,9 +24,9 @@ cask "jetbrains-gateway" do
   binary "#{appdir}/JetBrains Gateway.app/Contents/MacOS/gateway"
 
   zap trash: [
-    "~/Library/Application Support/JetBrains/JetBrainsGateway2021.3",
-    "~/Library/Caches/JetBrains/JetBrainsGateway2021.3",
-    "~/Library/Logs/JetBrains/JetBrainsGateway2021.3",
+    "~/Library/Application Support/JetBrains/JetBrainsGateway#{version.major_minor}",
+    "~/Library/Caches/JetBrains/JetBrainsGateway#{version.major_minor}",
+    "~/Library/Logs/JetBrains/JetBrainsGateway#{version.major_minor}",
     "~/Library/Preferences/com.jetbrains.gateway.plist",
     "~/Library/Saved Application State/com.jetbrains.gateway.savedState",
   ]

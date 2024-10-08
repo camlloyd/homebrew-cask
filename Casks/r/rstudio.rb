@@ -1,6 +1,6 @@
 cask "rstudio" do
-  version "2023.12.1,402"
-  sha256 "c8d9185df7205a51a00dc953cd504f329657192d44fab3cb7017bc135b1f1700"
+  version "2024.09.0,375"
+  sha256 "54d722fd39b3246b9201153bbf26f3329e3cae3e4efe384b87ab1a516388a98d"
 
   url "https://download1.rstudio.org/electron/macos/RStudio-#{version.csv.first}-#{version.csv.second}.dmg",
       verified: "download1.rstudio.org/electron/macos/"
@@ -11,15 +11,15 @@ cask "rstudio" do
   livecheck do
     url "https://posit.co/download/rstudio-desktop/"
     strategy :page_match do |page|
-      match = page.match(/RStudio-(\d+(?:\.\d+)+)-(\d+)\.dmg/i)
+      match = page.match(/RStudio[._-]v?(\d+(?:\.\d+)+)[._-](\d+)\.dmg/i)
       next if match.blank?
 
       "#{match[1]},#{match[2]}"
     end
   end
 
-  conflicts_with cask: "homebrew/cask-versions/rstudio-daily"
-  depends_on macos: ">= :high_sierra"
+  conflicts_with cask: "rstudio@daily"
+  depends_on macos: ">= :monterey"
 
   app "RStudio.app"
 

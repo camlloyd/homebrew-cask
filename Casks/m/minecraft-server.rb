@@ -1,6 +1,6 @@
 cask "minecraft-server" do
-  version "1.20.4,8dd1a28015f51b1803213892b50b7b4fc76e594d"
-  sha256 "c03fa6f39daa69ddf413c965a3a83084db746a7a138ce535a693293b5472d363"
+  version "1.21.1,59353fb40c36d304f2035d51e7d6e6baa98dc05c"
+  sha256 "e3bc55693e93cda0188f2e60aea28113fc647c5e85a15fa3d1b347349231b4bb"
 
   url "https://launcher.mojang.com/v#{version.major}/objects/#{version.csv.second}/server.jar",
       verified: "launcher.mojang.com/"
@@ -42,7 +42,7 @@ cask "minecraft-server" do
   end
 
   uninstall_preflight do
-    FileUtils.rm_f eula_file
+    FileUtils.rm(eula_file)
   end
 
   zap trash: config_dir

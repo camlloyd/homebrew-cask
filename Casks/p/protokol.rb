@@ -1,6 +1,6 @@
 cask "protokol" do
-  version "0.5.4,105"
-  sha256 "d717c96a8276b94408bd5bb595079871a0cacb3404c7adb9ef39cc2028cbe536"
+  version "0.5.7,116"
+  sha256 "ac0d2cc1858e0e935347e94b994c7e2b86e1a6464177442c63d804b6f20f34dc"
 
   url "https://hexler.net/pub/protokol/protokol-#{version.csv.first}.#{version.csv.second}-macos.dmg"
   name "protokol"

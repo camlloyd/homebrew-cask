@@ -1,6 +1,6 @@
 cask "hstracker" do
-  version "2.6.8"
-  sha256 "83e2cf19592333e464cb0190fdfbda88090b67053434051714584128dddec857"
+  version "3.0.6"
+  sha256 "7cdaf404e07773d4b707ada554e911d8c4cdc7ac081cad23dda0df50441db552"
 
   url "https://github.com/HearthSim/HSTracker/releases/download/#{version}/HSTracker.app.zip",
       verified: "github.com/HearthSim/HSTracker/"
@@ -28,4 +28,8 @@ cask "hstracker" do
     "~/Library/Preferences/net.hearthsim.hstracker.plist",
     "~/Library/Saved Application State/net.hearthsim.hstracker.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

@@ -1,6 +1,6 @@
 cask "bbedit" do
-  version "15.0.1"
-  sha256 "fc52374b4db440182952e170710cc40889c6cb76f35b475ed2fba4c56613d470"
+  version "15.1.2"
+  sha256 "f796e47cd147fa41cfeeeb8ebb2865923b5d7c8c9f52c0974cc7b8361e1897b8"
 
   url "https://s3.amazonaws.com/BBSW-download/BBEdit_#{version}.dmg",
       verified: "s3.amazonaws.com/BBSW-download/"
@@ -14,7 +14,8 @@ cask "bbedit" do
   end
 
   auto_updates true
-  depends_on macos: ">= :catalina"
+  conflicts_with cask: "bbedit@14"
+  depends_on macos: ">= :big_sur"
 
   app "BBEdit.app"
   binary "#{appdir}/BBEdit.app/Contents/Helpers/bbedit_tool", target: "bbedit"

@@ -1,8 +1,8 @@
 cask "cloudflare-warp" do
-  version "2024.2.68.0,20240214.9"
-  sha256 :no_check
+  version "2024.8.457.0"
+  sha256 "feef4dbecf39d2711efaeae77377b0caf7e370f40671c1d7608f8b3dc5b25524"
 
-  url "https://1111-releases.cloudflareclient.com/mac/Cloudflare_WARP.zip",
+  url "https://1111-releases.cloudflareclient.com/mac/Cloudflare_WARP_#{version}.pkg",
       verified: "1111-releases.cloudflareclient.com/mac/"
   name "Cloudflare WARP"
   desc "Free app that makes your Internet safer"
@@ -11,20 +11,22 @@ cask "cloudflare-warp" do
   livecheck do
     # :sparkle strategy using appcenter url cannot be used - see below link
     # https://github.com/Homebrew/homebrew-cask/pull/109118#issuecomment-887184248
-    url :url
-    strategy :extract_plist
+    url "https://1111-releases.cloudflareclient.com/mac/latest"
+    regex(/Cloudflare[._-]WARP[._-]v?(\d+(?:\.\d+)+)\.pkg/i)
+    strategy :header_match
   end
 
   auto_updates true
+  depends_on macos: ">= :catalina"
 
-  pkg "Cloudflare_WARP.pkg"
+  pkg "Cloudflare_WARP_#{version}.pkg"
 
-  uninstall launchctl: "com.cloudflare.1dot1dot1dot1.macos.loginlauncherapp",
-            script:    {
-              executable: "/Applications/Cloudflare WARP.app/Contents/Resources/uninstall.sh",
-              input:      ["Y\n"],
-              sudo:       true,
-            }
+  uninstall launchctl: [
+              "com.cloudflare.1dot1dot1dot1.macos.loginlauncherapp",
+              "com.cloudflare.1dot1dot1dot1.macos.warp.daemon",
+            ],
+            quit:      "com.cloudflare.1dot1dot1dot1.macos",
+            pkgutil:   "com.cloudflare.1dot1dot1dot1.macos"
 
   zap trash: [
     "~/Library/Application Scripts/com.cloudflare.1dot1dot1dot1.macos.loginlauncherapp",

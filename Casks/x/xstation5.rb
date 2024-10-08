@@ -1,7 +1,7 @@
 cask "xstation5" do
   # NOTE: "5" is not a version number, but an intrinsic part of the product name
-  version "2.44.1-Build.5"
-  sha256 "68809104af8de52077892a967aef83762c7f85232449c1621f1b0f36e95c53ff"
+  version "2.50.0-Build.5"
+  sha256 "4794697ccd6286c363b3600ba7a066e217405822e48cd8873bb91b10ffdd0e3e"
 
   url "https://desktopxstation5.xtb.com/prod/update/mac/xStation5-#{version}-mac.zip"
   name "xStation5"
@@ -22,4 +22,8 @@ cask "xstation5" do
     "~/Library/Preferences/xStation5.desktop.x64.plist",
     "~/Library/Saved Application State/xStation5.desktop.x64.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

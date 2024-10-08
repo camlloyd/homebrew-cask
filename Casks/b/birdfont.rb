@@ -7,14 +7,33 @@ cask "birdfont" do
       url "https://birdfont.org/purchase.php"
       regex(%r{Mac\s*OS\s*10\.12.*?/birdfont[._-]v?(\d+(?:\.\d+)+)[._-]free\.dmg}i)
     end
+
+    caveats do
+      requires_rosetta
+    end
   end
   on_catalina :or_newer do
-    version "5.2.1"
-    sha256 "e68b64679b8cdfbc193304edb83389e9546210ad77e886c903c30c3db89597e5"
+    on_ventura :or_older do
+      version "5.2.1"
+      sha256 "e68b64679b8cdfbc193304edb83389e9546210ad77e886c903c30c3db89597e5"
+
+      livecheck do
+        url "https://birdfont.org/purchase.php"
+        regex(%r{Mac\s*OS\s*10\.15.*?/birdfont[._-]v?(\d+(?:\.\d+)+)[._-]free\.dmg}i)
+      end
+
+      caveats do
+        requires_rosetta
+      end
+    end
+  end
+  on_sonoma :or_newer do
+    version "6.10.5"
+    sha256 "512442816a1eba006ffef440878bdc369849a6de203d3ce6696dbdda14ab9ac6"
 
     livecheck do
       url "https://birdfont.org/purchase.php"
-      regex(%r{Mac\s*OS\s*10\.15.*?/birdfont[._-]v?(\d+(?:\.\d+)+)[._-]free\.dmg}i)
+      regex(%r{Mac\s*OS\s*14.*?/birdfont[._-]v?(\d+(?:\.\d+)+)[._-]free\.dmg}i)
     end
   end
 

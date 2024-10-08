@@ -1,9 +1,9 @@
 cask "elektron-transfer" do
-  version "1.7.8,8381803e-e802-5dd8-a7d5-381000616a04"
-  sha256 "5c3e363a5c26d3efcb6faa7c04ff0c90d56a4426fa17def54487904874ecd2da"
+  version "1.8.11,a8c32131-0878-5e92-bb50-0caee13885a7"
+  sha256 "2141bf49898f3704c016326dee4bed4efbd88adc8cede80d2e3627324fe382cf"
 
-  url "https://s3-eu-west-1.amazonaws.com/se-elektron-devops/release/#{version.csv.second}/Elektron_Transfer_#{version.csv.first}.dmg",
-      verified: "s3-eu-west-1.amazonaws.com/se-elektron-devops/"
+  url "https://se-elektron-devops.s3.amazonaws.com/release/#{version.csv.second}/Elektron_Transfer_#{version.csv.first}.dmg",
+      verified: "se-elektron-devops.s3.amazonaws.com/"
   name "Elektron Transfer"
   desc "Transfer samples, presets, sounds, projects and firmware to Elektron devices"
   homepage "https://www.elektron.se/en/download-support-transfer"

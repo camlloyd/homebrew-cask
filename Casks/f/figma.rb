@@ -1,9 +1,9 @@
 cask "figma" do
   arch arm: "mac-arm", intel: "mac"
 
-  version "116.16.13"
-  sha256 arm:   "e1fceb438e70a027592822a25017ec634aead601f56433cc6d837d364761afbd",
-         intel: "1c7701a09cb5fbc41e292fd97ef918e8634a8904184549bb536b6ad3be9b1df8"
+  version "124.4.7"
+  sha256 arm:   "103fc91c73b1b2120592e9e4ca3e067966bb90b52dc19dfe7ffad13f5bd93a7f",
+         intel: "5b535a38e48c9c7f57b582c6ebb529181eafbd54e5a2e7da5014e7f22a0c09b2"
 
   url "https://desktop.figma.com/#{arch}/Figma-#{version}.zip"
   name "Figma"

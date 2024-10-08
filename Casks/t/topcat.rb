@@ -1,8 +1,8 @@
 cask "topcat" do
-  version "4.9-1"
-  sha256 :no_check
+  version "4.10"
+  sha256 "0f4b1adb996a01402e8030a03815354da6ff2b7660af101a33b2c5949ef542b8"
 
-  url "https://www.star.bristol.ac.uk/mbt/topcat/topcat-all.dmg"
+  url "https://www.star.bristol.ac.uk/mbt/releases/topcat/v#{version}/topcat-all.dmg"
   name "TOPCAT"
   desc "Interactive graphical viewer and editor for tabular data"
   homepage "https://www.star.bristol.ac.uk/mbt/topcat/"
@@ -17,8 +17,4 @@ cask "topcat" do
   binary "#{appdir}/TOPCAT.app/Contents/Resources/app/stilts"
 
   # No zap stanza required
-
-  caveats do
-    depends_on_java "8+"
-  end
 end

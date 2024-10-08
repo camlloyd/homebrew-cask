@@ -1,6 +1,6 @@
 cask "ddnet" do
-  version "18.0.3"
-  sha256 "a163aa48dadbe86b45ae2d0c027d55b5ff8b17d05788a052838689295b2b0273"
+  version "18.6"
+  sha256 "63dee4dcc83c9eb22f0f56700c080ee158c510f15b88e15a0d4ae001127bfdcb"
 
   url "https://ddnet.org/downloads/DDNet-#{version}-macos.dmg"
   name "DDNet"

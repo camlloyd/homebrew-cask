@@ -1,12 +1,12 @@
 cask "find-any-file" do
-  version "2.4.1"
-  sha256 "dc470272cbc898ac26a0bf9c2148722a8ca6005fa415acbcc4b269642395ef13"
+  version "2.5.2"
+  sha256 "384aaa06852bced198a728c01d02440d5efb3eaf40a6c6dd0f668f75a90850b0"
 
   url "https://s3.amazonaws.com/files.tempel.org/FindAnyFile_#{version}.zip",
       verified: "s3.amazonaws.com/"
   name "Find Any File"
   desc "File finder"
-  homepage "https://apps.tempel.org/FindAnyFile/"
+  homepage "https://findanyfile.app/"
 
   livecheck do
     url :homepage

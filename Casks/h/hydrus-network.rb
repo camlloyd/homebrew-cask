@@ -1,6 +1,6 @@
 cask "hydrus-network" do
-  version "564"
-  sha256 "90ad1e3354b343d104f4193ed6a5cfc813e9ec2bc6e8aa488153dee9128eefe2"
+  version "592"
+  sha256 "1dab8d2cb2f395cae975574b98f76d0d80b82bebc0f53e467b9efdd5a5563a2d"
 
   url "https://github.com/hydrusnetwork/hydrus/releases/download/v#{version}/Hydrus.Network.#{version}.-.macOS.-.App.dmg",
       verified: "github.com/hydrusnetwork/hydrus/"
@@ -17,4 +17,8 @@ cask "hydrus-network" do
   app "Hydrus Network.app"
 
   zap trash: "~/Library/Hydrus/"
+
+  caveats do
+    requires_rosetta
+  end
 end

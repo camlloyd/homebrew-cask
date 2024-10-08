@@ -1,11 +1,11 @@
 cask "plexamp" do
-  arch arm: "-arm64"
+  arch arm: "arm64", intel: "x64"
 
-  version "4.9.5"
-  sha256 arm:   "4598557aa06fe685422a6013158735da74b7f4e2ad4bbd1e598abf456b965252",
-         intel: "c184450c07e2613b4edf0e174060c74f2947c6c5d663279c6a4586aa819911cc"
+  version "4.11.2"
+  sha256 arm:   "b1754968be84d152b474d9ba04152a0290f51d8c255a0fab413925b4c10ad332",
+         intel: "dcef31732da19253872a2156cee6a796ae0c782c92ec3287272b1da8ba1297d4"
 
-  url "https://plexamp.plex.tv/plexamp.plex.tv/desktop/Plexamp-#{version}#{arch}.dmg",
+  url "https://plexamp.plex.tv/plexamp.plex.tv/desktop/Plexamp-#{version}-#{arch}.dmg",
       verified: "plexamp.plex.tv/"
   name "Plexamp"
   desc "Music player focusing on visuals"

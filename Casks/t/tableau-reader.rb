@@ -1,23 +1,24 @@
 cask "tableau-reader" do
-  version "2024.1.0"
-  sha256 "ff53a2272a6c2f7a1514e8997f56f376937760e15491b52a899980d969a50239"
+  arch arm: "-arm64"
 
-  url "https://downloads.tableau.com/tssoftware/TableauReader-#{version.dots_to_hyphens}.dmg"
+  version "2024.2.3"
+  sha256 arm:   "3c205a94a82db6481be75395bd406d0a7109b1d16b853acbbb1958038a607d4f",
+         intel: "19bf1425bb3cfb048b97834affa501a59a0525e0fb78bd280e8ad747229e33c6"
+
+  url "https://downloads.tableau.com/esdalt/#{version}/TableauReader-#{version.dots_to_hyphens}#{arch}.pkg",
+      user_agent: "curl/8.7.1"
   name "Tableau Reader"
   desc "Open and interact with data visualisations built in Tableau Desktop"
   homepage "https://www.tableau.com/products/reader"
 
   livecheck do
-    url "https://www.tableau.com/downloads/reader/mac"
-    regex(/-(\d+(?:-\d+)+)\.dmg/i)
-    strategy :header_match do |headers, regex|
-      headers["location"].scan(regex).map do |match|
-        match[0].tr("-", ".").to_s
-      end
+    url "https://downloads.tableau.com/TableauAutoUpdate.xml"
+    strategy :xml do |xml|
+      xml.get_elements("//version").map { |item| item.attributes["releaseNotesVersion"] }
     end
   end
 
-  pkg "Tableau Reader.pkg"
+  pkg "TableauReader-#{version.dots_to_hyphens}#{arch}.pkg"
 
   uninstall pkgutil: [
     "com.tableausoftware.FLEXNet.*",

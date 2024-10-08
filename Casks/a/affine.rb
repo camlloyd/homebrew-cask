@@ -1,11 +1,11 @@
 cask "affine" do
   arch arm: "arm64", intel: "x64"
 
-  version "0.12.2"
-  sha256 arm:   "527d1e4e6085e1ab2925862e52069e474ae29fcbc11c60356837c30d38015a5e",
-         intel: "396e1f14a5b0991943a4446ed2ed0c4646a9eb490bf9eaa0c33b907bef6c416c"
+  version "0.17.2"
+  sha256 arm:   "ea4645f93c0493045d47e0e8975f23e52fbf323790087ecc1de710a4495c5c38",
+         intel: "c075acc01cda0c1712b9085ef535af91fde100fc7d0acb079477634406229553"
 
-  url "https://github.com/toeverything/AFFiNE/releases/download/v#{version}/affine-stable-macos-#{arch}.zip",
+  url "https://github.com/toeverything/AFFiNE/releases/download/v#{version}/affine-#{version}-stable-macos-#{arch}.zip",
       verified: "github.com/toeverything/AFFiNE/"
   name "AFFiNE"
   desc "Note editor and whiteboard"

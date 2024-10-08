@@ -1,11 +1,12 @@
 cask "burp-suite-professional" do
   arch arm: "MacOsArm64", intel: "MacOsx"
 
-  version "2024.1.1.4"
-  sha256 arm:   "76bd3a77b7ec073f917bdaa5699a713118eb716b89f789c97e20ba464dfbff9d",
-         intel: "c7918500ad6625889e523cf7be9298d61751e726b82021df33b5dd3085eeb577"
+  version "2024.8.3"
+  sha256 arm:   "1e702899e8a155c2c268ec92e43b46d73496ed57abfe1197032ab92ec9eba165",
+         intel: "646f9dbadda585ef1d8f7fbcc2f2dbf3fcd6b85dc4cc6bf2cb14b64fb6301c0c"
 
-  url "https://portswigger.net/burp/releases/download?product=pro&version=#{version}&type=#{arch}"
+  url "https://portswigger-cdn.net/burp/releases/download?product=pro&version=#{version}&type=#{arch}",
+      verified: "portswigger-cdn.net/burp/releases/"
   name "Burp Suite Professional"
   desc "Web security testing toolkit"
   homepage "https://portswigger.net/burp/pro"
@@ -13,7 +14,7 @@ cask "burp-suite-professional" do
   livecheck do
     url "https://portswigger.net/burp/releases/data"
     strategy :json do |json|
-      all_versions = json["ResultSet"]["Results"]
+      all_versions = json.dig("ResultSet", "Results")
       next if all_versions.blank?
 
       all_versions.filter_map do |item|

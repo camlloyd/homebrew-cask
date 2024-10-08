@@ -1,6 +1,6 @@
 cask "sameboy" do
-  version "0.16.2"
-  sha256 "158243fc604409d719c1c88aeb0c4aaad09a4c17cdb4da0429ba0a4bdb212ac3"
+  version "0.16.7"
+  sha256 "e9994d7b86c3847066d50a42f5476adbdc63559006d9b311a335f49c976b6eb8"
 
   url "https://github.com/LIJI32/SameBoy/releases/download/v#{version}/sameboy_cocoa_v#{version}.zip",
       verified: "github.com/LIJI32/SameBoy/"

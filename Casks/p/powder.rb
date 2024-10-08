@@ -1,5 +1,5 @@
 cask "powder" do
-  version "97.0"
+  version "98.2"
   sha256 :no_check
 
   url "https://powdertoy.co.uk/Download/powder.dmg"
@@ -9,7 +9,7 @@ cask "powder" do
 
   livecheck do
     url :homepage
-    regex(%r{macOS</dt>\n\t*<dd class="Version">(\d+(?:\.\d+)*)}i)
+    regex(%r{macOS</dt>\n\t*<dd class="Version">(\d+(?:\.\d+)+)}i)
   end
 
   app "The Powder Toy.app"
@@ -18,4 +18,8 @@ cask "powder" do
     "~/Library/Application Support/The Powder Toy",
     "~/Library/Saved Application State/uk.co.powdertoy.tpt.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

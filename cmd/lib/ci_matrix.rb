@@ -9,12 +9,12 @@ module CiMatrix
 
   # Weight for each arch must add up to 1.0.
   INTEL_RUNNERS = {
-    { symbol: :big_sur,  name: "macos-11", arch: :intel } => 0.0,
     { symbol: :monterey, name: "macos-12", arch: :intel } => 0.0,
     { symbol: :ventura,  name: "macos-13", arch: :intel } => 1.0,
   }.freeze
   ARM_RUNNERS = {
-    { symbol: :sonoma,   name: "macos-14", arch: :arm   } => 1.0,
+    { symbol: :sonoma,   name: "macos-14", arch: :arm   } => 0.0,
+    { symbol: :sequoia,   name: "macos-15", arch: :arm }  => 1.0,
   }.freeze
   RUNNERS = INTEL_RUNNERS.merge(ARM_RUNNERS).freeze
 
@@ -86,9 +86,9 @@ module CiMatrix
     end
   end
 
-  def self.random_runner(avalible_runners = INTEL_RUNNERS)
-    avalible_runners.max_by { |(_, weight)| rand ** (1.0 / weight) }
-                    .first
+  def self.random_runner(available_runners = ARM_RUNNERS)
+    available_runners.max_by { |(_, weight)| rand ** (1.0 / weight) }
+                     .first
   end
 
   def self.runners(cask_content:)
@@ -139,7 +139,7 @@ module CiMatrix
 
     cask_files_to_check = if cask_names.any?
       cask_names.map do |cask_name|
-        Cask::CaskLoader.load(cask_name).sourcefile_path.relative_path_from(tap.path)
+        Cask::CaskLoader.find_cask_in_tap(cask_name, tap).relative_path_from(tap.path)
       end
     else
       changed_files[:modified_cask_files]
@@ -179,8 +179,8 @@ module CiMatrix
 
       cask_content = path.read
 
-      runners, multi_os = runners(cask_content: cask_content)
-      runners.product(architectures(cask_content: cask_content)).filter_map do |runner, arch|
+      runners, multi_os = runners(cask_content:)
+      runners.product(architectures(cask_content:)).filter_map do |runner, arch|
         native_runner_arch = arch == runner.fetch(:arch)
         # If it's just a single OS test then we can just use the two real arch runners.
         next if !native_runner_arch && !multi_os

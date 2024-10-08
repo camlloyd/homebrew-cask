@@ -4,12 +4,8 @@ cask "jandi-statusbar" do
 
   url "https://github.com/techinpark/Jandi/releases/download/v#{version}/jandi.dmg"
   name "jandi"
-  desc "Github Contributions in your status bar"
+  desc "GitHub contributions in your status bar"
   homepage "https://github.com/techinpark/Jandi"
-
-  livecheck do
-    skip "No reliable way to get version info"
-  end
 
   app "jandi.app"
 

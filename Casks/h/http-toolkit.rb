@@ -1,6 +1,6 @@
 cask "http-toolkit" do
-  version "1.14.10"
-  sha256 "d5344a73cdae31f37e95f8693e8fef76632858d89116877322e89c2b5ec9f279"
+  version "1.19.0"
+  sha256 "827acedf6f91a62f603b8462b374865ea206ebb735c962ddf5e718b9711fffad"
 
   url "https://github.com/httptoolkit/httptoolkit-desktop/releases/download/v#{version}/HttpToolkit-#{version}.dmg",
       verified: "github.com/httptoolkit/httptoolkit-desktop/"
@@ -23,4 +23,8 @@ cask "http-toolkit" do
     "~/Library/Preferences/tech.httptoolkit.desktop.plist",
     "~/Library/Saved Application State/tech.httptoolkit.desktop.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

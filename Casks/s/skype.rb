@@ -1,6 +1,6 @@
 cask "skype" do
-  version "8.113.0.210"
-  sha256 "e88cc9b59a9ec62b8cde27c9380ede9f78efc71767ab38211e1c564ccdc034b1"
+  version "8.129.0.202"
+  sha256 "792324d6979a6dbee45985167fcc32de2a54d0fa5e7360e4ab58dc754a9b90bd"
 
   url "https://endpoint920510.azureedge.net/s4l/s4l/download/mac/Skype-#{version}.dmg",
       verified: "endpoint920510.azureedge.net/s4l/s4l/download/mac/"
@@ -9,11 +9,12 @@ cask "skype" do
   homepage "https://www.skype.com/"
 
   livecheck do
-    url "https://go.skype.com/mac.download"
+    url "https://get.skype.com/go/getskype-skypeformac"
     strategy :header_match
   end
 
   auto_updates true
+  conflicts_with cask: "skype@preview"
   depends_on macos: ">= :high_sierra"
 
   app "Skype.app"

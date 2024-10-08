@@ -12,7 +12,7 @@ cask "openscad" do
     regex(/href=.*?OpenSCAD[._-]v?(\d+(?:\.\d+)+)\.dmg/i)
   end
 
-  conflicts_with cask: "homebrew/cask-versions/openscad-snapshot"
+  conflicts_with cask: "openscad@snapshot"
 
   app "OpenSCAD.app"
   binary "#{appdir}/OpenSCAD.app/Contents/MacOS/OpenSCAD", target: "openscad"
@@ -22,4 +22,8 @@ cask "openscad" do
     "~/Library/Preferences/org.openscad.OpenSCAD.plist",
     "~/Library/Saved Application State/org.openscad.OpenSCAD.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

@@ -1,6 +1,6 @@
 cask "black-ink" do
-  version "2.2.9"
-  sha256 "2d0a0d45b73a6424ab5b2e0f2b53442d8efa1158e549447951c4aeb9db210ef7"
+  version "2.3.2"
+  sha256 "3e53a33fc5cf811ab9dc44970ade32a0b239c49f4a58496f2395734cc04059e9"
 
   url "https://redsweater.com/blackink/BlackInk#{version}.zip"
   name "Black Ink"
@@ -12,7 +12,7 @@ cask "black-ink" do
     strategy :sparkle, &:short_version
   end
 
-  depends_on macos: ">= :sierra"
+  depends_on macos: ">= :catalina"
 
   app "Black Ink.app"
 

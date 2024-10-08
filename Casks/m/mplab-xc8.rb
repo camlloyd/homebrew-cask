@@ -1,6 +1,6 @@
 cask "mplab-xc8" do
-  version "2.46"
-  sha256 "4a105af1472147f3a124ce5e7661266bbf716321a5a67313f0617551df61f243"
+  version "2.50"
+  sha256 "1bfa239afc1c690cc4be1e58b280e2d55ef9d0fbace1e74a256677869225420b"
 
   url "https://ww1.microchip.com/downloads/aemDocuments/documents/DEV/ProductDocuments/SoftwareTools/xc8-v#{version}-full-install-macos-x64-installer.dmg"
   name "MPLab XC8 Compiler"
@@ -19,7 +19,7 @@ cask "mplab-xc8" do
       "--unattendedmodeui", "none",
       "--ModifyAll", "0",
       "--netservername", '""',
-      "--LicenseType", "FreeMode",
+      "--LicenseType", "WorkstationMode",
       "--prefix", staged_path.to_s
     ],
     input:      ["y"],
@@ -40,4 +40,6 @@ cask "mplab-xc8" do
     args:       ["--mode", "unattended"],
     sudo:       true,
   }
+
+  # No zap stanza required
 end

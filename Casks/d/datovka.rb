@@ -1,16 +1,19 @@
 cask "datovka" do
-  version "4.23.6"
-  sha256 "839f9705841983445c5dfa9dfad34e8a5645535d44d90fdbaed48fca6a7fa55a"
+  arch arm: "arm64-macos13.3", intel: "64bit-macos10.12"
 
-  url "https://secure.nic.cz/files/datove_schranky/#{version}/datovka-#{version}-64bit-macos10.12.dmg",
-      verified: "secure.nic.cz/files/datove_schranky/"
+  version "4.24.2"
+  sha256 arm:   "94d89c2cde3af843893d81fadf536205c027cd86d02a66643327aed32c8073d0",
+         intel: "800d9473841f866dc9014759f2c5625190cb9224366e45b9cd4e5edb85434b9b"
+
+  url "https://datovka.nic.cz/#{version}/datovka-#{version}-#{arch}.dmg",
+      verified: "datovka.nic.cz/"
   name "Datovka"
   desc "Access and store data messages in a local database"
   homepage "https://www.datovka.cz/"
 
   livecheck do
     url "https://www.datovka.cz/cs/pages/instalace.html"
-    regex(%r{href=.*?/datovka-(\d+(?:\.\d+)+)-64bit-macos10\.12\.dmg}i)
+    regex(%r{href=.*?/datovka[._-](\d+(?:\.\d+)+)[._-]#{arch}\.dmg}i)
   end
 
   app "datovka.app"

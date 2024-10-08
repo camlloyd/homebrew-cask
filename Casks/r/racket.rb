@@ -1,9 +1,9 @@
 cask "racket" do
   arch arm: "aarch64", intel: "x86_64"
 
-  version "8.12"
-  sha256 arm:   "6fbc013017afaa8ae45fc564c6bb1f510f98efc27194c8e6e49654cd973fe439",
-         intel: "04d206e6e3ec227063f30339a04701214c58d4ff88280593d91ea26afaa0486d"
+  version "8.14"
+  sha256 arm:   "56bc3a363cf463b759277a81ad1182956a895fc680349a3238395f58a1707bde",
+         intel: "913c5084f76f0f8bcbb121e11fd9131f318d3e4648a20367bed189998c3f1658"
 
   url "https://mirror.racket-lang.org/installers/#{version}/racket-#{version}-#{arch}-macosx-cs.dmg"
   name "Racket"

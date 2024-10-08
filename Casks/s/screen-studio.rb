@@ -1,9 +1,9 @@
 cask "screen-studio" do
   arch arm: "-arm64"
 
-  version "2.20.4"
-  sha256 arm:   "92db86b350fa3cbde5c208779cea9076a7427a8bbaac097ef6b7d662cf49d2e2",
-         intel: "85ea99e5ea125bc3b599c876cc8a7f259bf417b84ab85c5c69a39434fe68bcbc"
+  version "2.25.30"
+  sha256 arm:   "b0cc048edc0a7ec851e02f1be8381f2eab4da99ce55e3847a50188b2846a6107",
+         intel: "1368cb23df7f1a0099743740721e884642554c9578ab1f52f22730c6ed7f663f"
 
   url "https://screenstudioassets.com/Screen%20Studio-#{version}#{arch}-mac.zip",
       verified: "screenstudioassets.com/"
@@ -12,9 +12,9 @@ cask "screen-studio" do
   homepage "https://www.screen.studio/"
 
   livecheck do
-    url "https://www.screen.studio/api/app-version"
+    url "https://www.screen.studio/api/trpc/appInfo.latestVersionInfo?input=%7B%22isBeta%22%3Afalse%7D"
     strategy :json do |json|
-      json["version"]
+      json.dig("result", "data", "version")
     end
   end
 
@@ -24,13 +24,13 @@ cask "screen-studio" do
   app "Screen Studio.app"
 
   zap trash: [
-    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.timpler.screenstudio.sfl*",
-    "~/Library/Application Support/Screen Studio",
-    "~/Library/Caches/com.timpler.screenstudio",
-    "~/Library/Caches/com.timpler.screenstudio.ShipIt",
-    "~/Library/HTTPStorages/com.timpler.screenstudio",
-    "~/Library/Preferences/com.timpler.screenstudio.plist",
-    "~/Library/Saved Application State/com.timpler.screenstudio.savedState",
-    "~/Screen Studio Projects",
-  ]
+        "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.timpler.screenstudio.sfl*",
+        "~/Library/Application Support/Screen Studio",
+        "~/Library/Caches/com.timpler.screenstudio",
+        "~/Library/Caches/com.timpler.screenstudio.ShipIt",
+        "~/Library/HTTPStorages/com.timpler.screenstudio",
+        "~/Library/Preferences/com.timpler.screenstudio.plist",
+        "~/Library/Saved Application State/com.timpler.screenstudio.savedState",
+      ],
+      rmdir: "~/Screen Studio Projects"
 end

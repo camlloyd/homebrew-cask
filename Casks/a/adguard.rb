@@ -1,6 +1,6 @@
 cask "adguard" do
-  version "2.13.0.1558"
-  sha256 "a1fabc2145360e6af82afa5912c3644fb014eeffe49f7c720e33390e3b67fb76"
+  version "2.15.1.1731"
+  sha256 "d62a7c6a3f6048c56e41b2119e405c159b3dc6c1348dc54226353cae434989d2"
 
   url "https://static.adguard.com/mac/release/AdGuard-#{version}.dmg"
   name "AdGuard"
@@ -15,7 +15,7 @@ cask "adguard" do
   end
 
   auto_updates true
-  conflicts_with cask: "homebrew/cask-versions/adguard-nightly"
+  conflicts_with cask: "adguard@nightly"
   depends_on macos: ">= :catalina"
 
   pkg "AdGuard.pkg"
@@ -37,7 +37,7 @@ cask "adguard" do
 
   zap delete: "/Library/Logs/com.adguard.mac.adguard",
       trash:  [
-        "~/Library/Application Scripts/*.com.adguard.mac*",
+        "~/Library/Application Scripts/*com.adguard.mac*",
         "~/Library/Application Support/Adguard",
         "~/Library/Application Support/com.adguard.*",
         "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.adguard.mac.adguard.loginhelper.sfl*",

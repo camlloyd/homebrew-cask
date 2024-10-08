@@ -1,6 +1,6 @@
 cask "lunarbar" do
-  version "1.2.0"
-  sha256 "7af684d9479d5e0d7c8a45686b12808a5ce0680b828cc471a96c4112ff3c4fb3"
+  version "1.2.2"
+  sha256 "04eaad5d5ad5b65b16953fb5dc3ac428043df05c7e173aee7e79d80d6acd618c"
 
   url "https://github.com/LunarBar-app/LunarBar/releases/download/v#{version}/LunarBar-#{version}.dmg"
   name "LunarBar"

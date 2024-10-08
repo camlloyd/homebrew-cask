@@ -1,6 +1,6 @@
 cask "maltego" do
-  version "4.6.0"
-  sha256 "70c52b29f3114540083e1ce6972e5708f583432f5418423715504ce48fda4d08"
+  version "4.8.0"
+  sha256 "cbb8b07b33829b5f26e5b37e67f8dfb84624cc34abc050491717513d76e0ea65"
 
   url "https://downloads.maltego.com/maltego-v#{version.major}/mac/Maltego.v#{version}.dmg"
   name "Maltego"
@@ -18,5 +18,6 @@ cask "maltego" do
 
   caveats do
     depends_on_java "11"
+    requires_rosetta
   end
 end

@@ -1,12 +1,12 @@
 cask "nosql-workbench" do
   arch arm: "arm64", intel: "x64"
 
-  version "3.12.0"
-  sha256 arm:   "41c5526746a97647a845da9bef7e84882a1017446d0179b4c32a32ed3a355f0f",
-         intel: "f5c4cda823a5946650263784c84fb791abe33ddc9958558711cdd4aff0dab6c4"
+  version "3.13.2"
+  sha256 arm:   "b270892cca9858fc1b19009cf8012376a7439b1f865ab0238f04baab43874108",
+         intel: "2b85fd0dbcf45270597f468d5072b41af8f85e2440f92d0aa281fe7025725dca"
 
-  url "https://s3.amazonaws.com/nosql-workbench/NoSQL%20Workbench-mac-#{arch}-#{version}.dmg",
-      verified: "s3.amazonaws.com/nosql-workbench/"
+  url "https://nosql-workbench.s3.amazonaws.com/NoSQL%20Workbench-mac-#{arch}-#{version}.dmg",
+      verified: "nosql-workbench.s3.amazonaws.com/"
   name "NoSQL Workbench"
   desc "Client-side GUI application for modern database development and operations"
   homepage "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/workbench.html"

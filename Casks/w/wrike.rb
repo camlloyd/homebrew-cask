@@ -1,6 +1,6 @@
 cask "wrike" do
-  version "4.2.1"
-  sha256 "b72bb20be4a1d0b1a2c5eae8932a19249dd79caa3c342aeccf47a535f406ee6b"
+  version "4.4.2"
+  sha256 "2668f1fce5654492e2ff14c46a1e1cb82f61c254c753b008723af79a9fc289c7"
 
   url "https://dl.wrike.com/download/WrikeDesktopApp.v#{version}.dmg"
   name "Wrike"
@@ -20,4 +20,8 @@ cask "wrike" do
     "~/Library/Preferences/com.wrike.Wrike.plist",
     "~/Library/Saved Application State/com.wrike.Wrike.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

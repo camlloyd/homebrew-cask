@@ -1,9 +1,9 @@
 cask "intellij-idea" do
   arch arm: "-aarch64"
 
-  version "2023.3.4,233.14475.28"
-  sha256 arm:   "d41bc161616dd05bff9aa4b6f3ee704a7ec2c8f35c09c0c79b0778b36a4bab6b",
-         intel: "b8d9d618786f552cdb8a34efbe36c3fa8c9fb94eb37c8552580c5210ba36b52c"
+  version "2024.2.3,242.23339.11"
+  sha256 arm:   "985a90d418ecef8758b466a245c3170df95dd2024922fcf9195be74465d77fe4",
+         intel: "bc47dc27e81f0fd15a9b62132912e68051b5b9f31bef6faadfcf27a48db8ffa7"
 
   url "https://download.jetbrains.com/idea/ideaIU-#{version.csv.first}#{arch}.dmg"
   name "IntelliJ IDEA Ultimate"
@@ -20,6 +20,7 @@ cask "intellij-idea" do
   end
 
   auto_updates true
+  conflicts_with cask: "intellij-idea@eap"
   depends_on macos: ">= :high_sierra"
 
   app "IntelliJ IDEA.app"

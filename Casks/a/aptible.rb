@@ -1,12 +1,12 @@
 cask "aptible" do
-  version "0.19.7,20230901160725,390"
-  sha256 "333a5cbdb1d05ce43324cf5490a2b698a5314e5a99ca01eec09be8376b6160ef"
+  version "0.21.0,20240702185709,415"
+  sha256 "edd2d1589e1c3e085b9ca8d3c0fde22c172491a637f5ef9aeb4f1d206097be72"
 
   url "https://omnibus-aptible-toolbelt.s3.amazonaws.com/aptible/omnibus-aptible-toolbelt/master/#{version.csv.third}/pkg/aptible-toolbelt-#{version.csv.first}%2B#{version.csv.second}-mac-os-x.10.15.7-1.pkg",
       verified: "omnibus-aptible-toolbelt.s3.amazonaws.com/"
   name "Aptible Toolbelt"
   desc "Command-line tool for Aptible Deploy, an audit-ready App Deployment Platform"
-  homepage "https://www.aptible.com/docs/cli"
+  homepage "https://www.aptible.com/docs/reference/aptible-cli/overview"
 
   livecheck do
     url :homepage

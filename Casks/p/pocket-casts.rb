@@ -1,15 +1,16 @@
 cask "pocket-casts" do
-  version "1.5.2"
-  sha256 :no_check
+  version "2.0.7"
+  sha256 "db730fb3a6a3cdcca4c0491af22c76ba54050abc202ca655560fb7d34a51d0bd"
 
-  url "https://static.pocketcasts.com/mac/PocketCasts.zip"
+  url "https://cdn.a8c-ci.services/pocket-casts-desktop/pocket-casts-desktop-darwin-universal-v#{version}.dmg",
+      verified: "cdn.a8c-ci.services/pocket-casts-desktop/"
   name "Pocket Casts"
   desc "Podcast platform"
   homepage "https://play.pocketcasts.com/"
 
   livecheck do
-    url "https://static.pocketcasts.com/mac/appcast.xml"
-    strategy :sparkle, &:short_version
+    url "https://pocketcasts.com/get/mac"
+    strategy :header_match
   end
 
   auto_updates true
@@ -19,7 +20,13 @@ cask "pocket-casts" do
 
   zap trash: [
     "~/Library/Application Support/au.com.shiftyjelly.PocketCasts",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.electron.pocket-casts.sfl*",
+    "~/Library/Application Support/Pocket Casts",
     "~/Library/Caches/au.com.shiftyjelly.PocketCasts",
+    "~/Library/Caches/com.electron.pocket-casts*",
+    "~/Library/HTTPStorages/com.electron.pocket-casts",
     "~/Library/Preferences/au.com.shiftyjelly.PocketCasts.plist",
+    "~/Library/Preferences/com.electron.pocket-casts.plist",
+    "~/Library/Saved Application State/com.electron.pocket-casts.savedState",
   ]
 end

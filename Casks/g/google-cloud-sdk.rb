@@ -1,9 +1,9 @@
 cask "google-cloud-sdk" do
   arch arm: "arm", intel: "x86_64"
 
-  version "467.0.0"
-  sha256 arm:   "b91e876d8f52f7bbd63f32d6118430b7254f5554ce26b63a17f66f327da11271",
-         intel: "7d6c1bd5929d00031b7a6945235e5a41ff333a464d523d0db5381032c5e0e764"
+  version "496.0.0"
+  sha256 arm:   "6e6329be814e62e30d3876e6c77736b60caa0e3224c706142985abf855d5c67e",
+         intel: "86c3e2114332f811df8f9ceec80231b70670c7a1ddee6d7c2cd7e4cf8939fb17"
 
   url "https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-#{version}-darwin-#{arch}.tar.gz"
   name "Google Cloud SDK"
@@ -12,11 +12,11 @@ cask "google-cloud-sdk" do
 
   livecheck do
     url "https://cloud.google.com/sdk/docs/install-sdk"
-    regex(/google-cloud-cli-(\d+(?:\.\d+)+)/i)
+    regex(/latest\s*gcloud\s*CLI\s*version\s*\(v?(\d+(?:\.\d+)+)\)/i)
   end
 
   auto_updates true
-  depends_on formula: "python@3.11"
+  depends_on formula: "python@3.12"
 
   google_cloud_sdk_root = "#{HOMEBREW_PREFIX}/share/google-cloud-sdk"
 
@@ -31,7 +31,6 @@ cask "google-cloud-sdk" do
       "--install-python", "false"
     ],
   }
-  binary "google-cloud-sdk/bin/anthoscli"
   binary "google-cloud-sdk/bin/bq"
   binary "google-cloud-sdk/bin/docker-credential-gcloud"
   binary "google-cloud-sdk/bin/gcloud"
@@ -44,7 +43,7 @@ cask "google-cloud-sdk" do
 
   preflight do
     FileUtils.cp_r staged_path/"google-cloud-sdk/.", google_cloud_sdk_root, remove_destination: true
-    (staged_path/"google-cloud-sdk").rmtree
+    FileUtils.rm_r(staged_path/"google-cloud-sdk")
     FileUtils.ln_s google_cloud_sdk_root, (staged_path/"google-cloud-sdk")
   end
 
@@ -61,19 +60,4 @@ cask "google-cloud-sdk" do
     "#{google_cloud_sdk_root}.staging",
     google_cloud_sdk_root,
   ]
-
-  caveats <<~EOS
-    To add gcloud components to your PATH, add this to your profile:
-
-      for bash users
-        source "$(brew --prefix)/share/google-cloud-sdk/path.bash.inc"
-
-      for zsh users
-        source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
-        source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
-
-      for fish users
-        source "$(brew --prefix)/share/google-cloud-sdk/path.fish.inc"
-
-  EOS
 end

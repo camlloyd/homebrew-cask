@@ -1,6 +1,6 @@
 cask "subsurface" do
-  version "6.0.5112"
-  sha256 "5dfd3a2133d4e35d4e92d46fb005c0220f79906591834497d0066190bcbe22c0"
+  version "6.0.5231"
+  sha256 "4db739a6794bbce5143c78a423c06df2165e9fe12f434b97f888f0eb959332e5"
 
   url "https://subsurface-divelog.org/downloads/Subsurface-#{version}-CICD-release.dmg",
       user_agent: :fake
@@ -20,4 +20,8 @@ cask "subsurface" do
     "~/Library/Caches/Subsurface",
     "~/Library/Preferences/org.hohndel.subsurface.Subsurface.plist",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

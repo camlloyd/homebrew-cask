@@ -1,11 +1,12 @@
 cask "jordanbaird-ice" do
-  version "0.6.2"
-  sha256 "fae280948471935fdfd90962d3c5377628c0c59f46d737cf26df4cc89326248d"
+  version "0.11.9"
+  sha256 "9c2ee0205e0e764518a1a71bcabd5cbf9c69264583aa1156d7550d66f82b42d1"
 
-  url "https://github.com/jordanbaird/Ice/releases/download/#{version}/Ice.zip"
+  url "https://github.com/jordanbaird/Ice/releases/download/#{version}/Ice.zip",
+      verified: "github.com/jordanbaird/Ice/"
   name "Ice"
   desc "Menu bar manager"
-  homepage "https://github.com/jordanbaird/Ice"
+  homepage "https://icemenubar.app/"
 
   auto_updates true
   depends_on macos: ">= :sonoma"

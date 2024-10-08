@@ -1,6 +1,6 @@
 cask "microsoft-teams" do
-  version "24004.1304.2655.7488"
-  sha256 "5f4606f8c9cab90072dd0fe41460715b771d7e36bef175b137d8da42049cc8be"
+  version "24244.507.3125.3475"
+  sha256 "2099d883fb27f0d0fe59b5c86cba7423b129b73840ccf7a377bb22c8e367da82"
 
   url "https://statics.teams.cdn.office.net/production-osx/#{version}/MicrosoftTeams.pkg",
       verified: "statics.teams.cdn.office.net/production-osx/"
@@ -47,7 +47,7 @@ cask "microsoft-teams" do
               "com.microsoft.teams2",
             ],
             delete:    [
-              "/Applications/Microsoft Teams (work or school).app",
+              "/Applications/Microsoft Teams.app",
               "/Library/Application Support/Microsoft/TeamsUpdaterDaemon",
               "/Library/Logs/Microsoft/MSTeams",
               "/Library/Logs/Microsoft/Teams",

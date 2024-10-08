@@ -1,9 +1,9 @@
 cask "blockbench" do
   arch arm: "arm64", intel: "x64"
 
-  version "4.9.4"
-  sha256 arm:   "9f3ba5ce24dcfd5a9fbddefcfe1feb22297bf88490f94df2238dccc54efde0e1",
-         intel: "2aca0ccac024334294c38dcdc3cac00ee20413fea444268e174114234edb975a"
+  version "4.11.1"
+  sha256 arm:   "28d75f44d5e0a26f72764ff1fb65d1f61a18ad2bddacb82da854c6c4507f3d0b",
+         intel: "c9d65ff04c4c5d1cc722722976cde232ba8c2a3cff0a198ac58c8dc3749de92e"
 
   url "https://github.com/JannisX11/blockbench/releases/download/v#{version}/Blockbench_#{arch}_#{version}.dmg",
       verified: "github.com/JannisX11/blockbench/"
@@ -16,7 +16,7 @@ cask "blockbench" do
     strategy :github_latest
   end
 
-  depends_on macos: ">= :high_sierra"
+  depends_on macos: ">= :catalina"
 
   app "Blockbench.app"
 

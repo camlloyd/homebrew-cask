@@ -1,20 +1,20 @@
 cask "dolphin" do
-  version "5.0"
-  sha256 "1e7127cf9b110c5d7feabc0d05f620bad31d0f47a1d16e1f46e2e402d0ec233c"
+  version "2409"
+  sha256 "17917940d84bcf1abc46e85d6d4cb960f1fd7e017dd6502f9c505ba3135def97"
 
-  url "https://dl-mirror.dolphin-emu.org/#{version}/dolphin-#{version}.dmg"
+  url "https://dl.dolphin-emu.org/releases/#{version}/dolphin-#{version}-universal.dmg"
   name "Dolphin"
   desc "Emulator to play GameCube and Wii games"
   homepage "https://dolphin-emu.org/"
 
   livecheck do
     url "https://dolphin-emu.org/download/"
-    regex(/href=.*?dolphin[._-]v?(\d+(?:\.\d+)+)(?:[._-]universal)?\.dmg/i)
+    regex(/href=.*?dolphin[._-]v?(\d+(?:\.\d+)*[a-z]?)(?:[._-]universal)?\.dmg/i)
   end
 
   conflicts_with cask: [
-    "homebrew/cask-versions/dolphin-beta",
-    "homebrew/cask-versions/dolphin-dev",
+    "dolphin@beta",
+    "dolphin@dev",
   ]
   depends_on macos: ">= :catalina"
 

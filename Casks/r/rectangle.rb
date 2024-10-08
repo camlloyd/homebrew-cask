@@ -1,6 +1,6 @@
 cask "rectangle" do
-  version "0.76"
-  sha256 "a07ab998b3169688ba4dff35ae37265051b022082d31dc8b3ea6c3fe03b33475"
+  version "0.83"
+  sha256 "477eb89b55f4350932fd6f4dceccd4ccffb67f4e99a81b892a1e66dae3972e6a"
 
   url "https://github.com/rxhanson/Rectangle/releases/download/v#{version}/Rectangle#{version}.dmg",
       verified: "github.com/rxhanson/Rectangle/"
@@ -14,7 +14,7 @@ cask "rectangle" do
   end
 
   auto_updates true
-  depends_on macos: ">= :sierra"
+  depends_on macos: ">= :catalina"
 
   app "Rectangle.app"
 
@@ -27,5 +27,6 @@ cask "rectangle" do
     "~/Library/Containers/com.knollsoft.RectangleLauncher",
     "~/Library/HTTPStorages/com.knollsoft.Rectangle",
     "~/Library/Preferences/com.knollsoft.Rectangle.plist",
+    "~/Library/WebKit/com.knollsoft.Rectangle",
   ]
 end

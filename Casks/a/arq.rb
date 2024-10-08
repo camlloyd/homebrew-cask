@@ -1,6 +1,6 @@
 cask "arq" do
-  version "7.26.7"
-  sha256 "4d94bfb56ebb02fcfb90fd667a05410f3349280d0c877b0e3e3c554642be7542"
+  version "7.32.1"
+  sha256 "11dd5e3035b4b11a07e1cee4719fb97697460d495eb6ac80e5b4136847a6659a"
 
   url "https://www.arqbackup.com/download/arqbackup/Arq#{version}.pkg"
   name "Arq"
@@ -9,7 +9,7 @@ cask "arq" do
 
   livecheck do
     url "https://www.arqbackup.com/download/arqbackup/arq#{version.major}_release_notes.html"
-    regex(/Version\s*v?(\d+(?:\.\d+)+)/i)
+    regex(/Version\s+v?(\d+(?:\.\d+)+)/i)
   end
 
   auto_updates true

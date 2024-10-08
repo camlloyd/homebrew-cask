@@ -1,6 +1,6 @@
 cask "amneziavpn" do
-  version "4.4.0.0"
-  sha256 "2f7c13cceef59c4c72b551e2a2abbaf7cde823a564ed7166f17e56f008a7fff5"
+  version "4.7.0.0"
+  sha256 "8653b54b9eccb0778b2d23ee33f58ad026b1ef8312b559f02ae8fa3c66b4c288"
 
   url "https://github.com/amnezia-vpn/amnezia-client/releases/download/#{version}/AmneziaVPN_#{version}.dmg",
       verified: "github.com/amnezia-vpn/amnezia-client/"
@@ -28,4 +28,8 @@ cask "amneziavpn" do
     "~/Library/Preferences/AmneziaVPN.plist",
     "~/Library/Preferences/org.amneziavpn.AmneziaVPN.plist",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

@@ -1,6 +1,6 @@
 cask "chessx" do
-  version "1.6.0"
-  sha256 "40caf7d6fa85f934a539420a6cc5844d0c5bee1667889b8c59a0caeb10002c52"
+  version "1.6.4"
+  sha256 "cf8d57ceb7ebf400ab16a9b5fe5283dac4b3e80f4702ef5190a81f19c124d57f"
 
   url "https://downloads.sourceforge.net/chessx/chessx/#{version}/chessx-#{version}.dmg",
       verified: "downloads.sourceforge.net/chessx/"

@@ -1,6 +1,6 @@
 cask "igv" do
-  version "2.17.2"
-  sha256 "f42ea840f82c093eacd1c5b285ed5ff0b523e658254d9e4d823a751ee037bd62"
+  version "2.18.4"
+  sha256 "89098662eaf020b29ac20ee3d92585265179feefdb446183c391c20a9ab77768"
 
   url "https://data.broadinstitute.org/igv/projects/downloads/#{version.major_minor}/IGV_MacApp_#{version}.zip"
   name "Integrative Genomics Viewer (IGV)"
@@ -21,6 +21,7 @@ cask "igv" do
   ]
 
   caveats do
-    depends_on_java "11+"
+    requires_rosetta
+    depends_on_java "17+"
   end
 end

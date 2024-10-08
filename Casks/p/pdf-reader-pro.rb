@@ -1,6 +1,6 @@
 cask "pdf-reader-pro" do
-  version "3.3.0.0"
-  sha256 "d85f3e56d64e0a9e38906f71b9f82e18853a0005ae01a67205ede2831d39cd43"
+  version "4.6.1"
+  sha256 "4dba9a1bdb80f98f5a405cfe66c3e0e28c44641763f5aa5f874cbe11a5abe1fc"
 
   url "https://www.pdfreaderpro.com/downloads/PDFReaderPro_v#{version.major_minor_patch}.dmg"
   name "PDF Reader Pro"
@@ -9,7 +9,10 @@ cask "pdf-reader-pro" do
 
   livecheck do
     url "https://www.pdfreaderpro.com/downloads/pdfreaderprocast.xml"
-    strategy :sparkle
+    regex(/PDFReaderPro[._-]v?(\d+(?:\.\d+)+)\.dmg/i)
+    strategy :sparkle do |items, regex|
+      items.map { |item| item.url[regex, 1] }
+    end
   end
 
   depends_on macos: ">= :high_sierra"

@@ -1,14 +1,8 @@
 cask "spotify" do
   arch arm: "ARM64"
 
+  version "1.2.47.364"
   sha256 :no_check
-
-  on_arm do
-    version "1.2.32.997,4c6498b6,1708"
-  end
-  on_intel do
-    version "1.2.32.997,4c6498b6,1686"
-  end
 
   url "https://download.scdn.co/Spotify#{arch}.dmg",
       verified: "download.scdn.co/"
@@ -18,20 +12,19 @@ cask "spotify" do
 
   livecheck do
     url :url
-    strategy :extract_plist do |items|
-      match = items["com.spotify.client"].version.match(/^(\d+(?:\.\d+)+)[._-]g(\h+)[._-](\d+)$/i)
-      next if match.blank?
-
-      "#{match[1]},#{match[2]},#{match[3]}"
-    end
+    strategy :extract_plist
   end
 
   auto_updates true
-  depends_on macos: ">= :el_capitan"
+  depends_on macos: ">= :big_sur"
 
   app "Spotify.app"
 
-  uninstall launchctl: "com.spotify.webhelper",
+  uninstall launchctl: [
+              "*.spotify.client.*",
+              "com.spotify.client.startuphelper",
+              "com.spotify.webhelper",
+            ],
             quit:      "com.spotify.client"
 
   zap trash: [

@@ -1,6 +1,6 @@
 cask "tower" do
-  version "10.4,386,3c95c8ac"
-  sha256 "fb7904af1ed9d8ea5d6b77eeb806725f95bb8ebd4ed4fea34aa64f02e461f943"
+  version "12.0,425,6cf53f1a"
+  sha256 "fbd7f99362e03ba8db62b9790590c51fdf1b554ad75d211f988ce66afde69b58"
 
   url "https://www.git-tower.com/apps/tower3-mac/#{version.csv.second}-#{version.csv.third}/Tower-#{version.csv.first}-#{version.csv.second}.zip"
   name "Tower"
@@ -25,6 +25,9 @@ cask "tower" do
     "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.fournova.tower*.sfl*",
     "~/Library/Application Support/com.fournova.Tower*",
     "~/Library/Caches/com.fournova.Tower*",
+    "~/Library/Caches/com.plausiblelabs.crashreporter.data/com.fournova.Tower*",
+    "~/Library/HTTPStorages/com.fournova.Tower*",
     "~/Library/Preferences/com.fournova.Tower*.plist",
+    "~/Library/Saved Application State/com.fournova.Tower*.savedState",
   ]
 end

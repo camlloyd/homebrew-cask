@@ -1,8 +1,8 @@
 cask "cleanmymac" do
-  version "4.15.1"
-  sha256 "2a19514c8cddb11d1182b4a8949435482bc7134a36d8ac9135a1e231e9afc70e"
+  version "4.15.8,41508.0.2409290833,1727689474"
+  sha256 "e8b6f656653c50ab2bd843686d58cc0aaf8b391530524cd66ed5c10127f9a904"
 
-  url "https://dl.devmate.com/com.macpaw.CleanMyMac#{version.major}/CleanMyMacX.dmg",
+  url "https://dl.devmate.com/com.macpaw.CleanMyMac#{version.major}/#{version.csv.second}/#{version.csv.third}/CleanMyMacX-#{version.csv.second}.zip",
       verified: "dl.devmate.com/"
   name "CleanMyMac X"
   desc "Tool to remove unnecessary files and folders from disk"
@@ -10,7 +10,13 @@ cask "cleanmymac" do
 
   livecheck do
     url "https://updates.devmate.com/com.macpaw.CleanMyMac#{version.major}.xml"
-    strategy :sparkle, &:short_version
+    regex(%r{/([^/]+)/CleanMyMacX[._-]v?(?:\d+(?:\.\d+)+)\.zip}i)
+    strategy :sparkle do |item|
+      directory = item.url[regex, 1]
+      next if directory.blank?
+
+      "#{item.short_version},#{item.version},#{directory}"
+    end
   end
 
   auto_updates true
@@ -41,31 +47,20 @@ cask "cleanmymac" do
     "/Users/Shared/CleanMyMac X Menu",
     "/Users/Shared/CleanMyMac X",
     "~/Library/Application Scripts/com.macpaw.CleanMyMac#{version.major}.CleanMyMacWidget",
-    "~/Library/Application Support/CleanMyMac X Menu",
-    "~/Library/Application Support/CleanMyMac X",
+    "~/Library/Application Support/CleanMyMac X*",
     "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.macpaw.cleanmymac#{version.major}.scheduler.sfl*",
     "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.macpaw.cleanmymac#{version.major}.sfl*",
     "~/Library/Caches/CleanMyMac #{version.major}",
     "~/Library/Caches/com.apple.helpd/SDMHelpData/Other/English/HelpSDMIndexFile/com.macpaw.CleanMyMac#{version.major}.help*",
-    "~/Library/Caches/com.macpaw.CleanMyMac#{version.major}",
-    "~/Library/Caches/com.macpaw.CleanMyMac#{version.major}.HealthMonitor",
-    "~/Library/Caches/com.macpaw.CleanMyMac#{version.major}.KnowledgeBase",
-    "~/Library/Caches/com.macpaw.CleanMyMac#{version.major}.Menu",
-    "~/Library/Caches/com.macpaw.CleanMyMac#{version.major}.Scheduler",
-    "~/Library/Caches/com.macpaw.CleanMyMac#{version.major}.Updater",
+    "~/Library/Caches/com.macpaw.CleanMyMac#{version.major}*",
     "~/Library/Containers/com.macpaw.CleanMyMac#{version.major}.CleanMyMacWidget",
-    "~/Library/Group Containers/*.com.macpaw.CleanMyMac#{version.major}",
-    "~/Library/LaunchAgents/com.macpaw.CleanMyMac#{version.major}.HealthMonitor.plist",
-    "~/Library/LaunchAgents/com.macpaw.CleanMyMac#{version.major}.Updater.plist",
+    "~/Library/Group Containers/*.com.macpaw.CleanMyMac#{version.major}*",
+    "~/Library/HTTPStorages/com.macpaw.CleanMyMac#{version.major}*",
+    "~/Library/LaunchAgents/com.macpaw.CleanMyMac#{version.major}*",
     "~/Library/Logs/CleanMyMac #{version.major}.log",
-    "~/Library/Logs/CleanMyMac X Menu/HealthMonitor",
+    "~/Library/Logs/CleanMyMac X Menu",
     "~/Library/Logs/com.macpaw.CleanMyMac#{version.major}",
-    "~/Library/Preferences/com.macpaw.CleanMyMac#{version.major}.HealthMonitor.plist",
-    "~/Library/Preferences/com.macpaw.CleanMyMac#{version.major}.KnowledgeBase.plist",
-    "~/Library/Preferences/com.macpaw.cleanmymac#{version.major}.Menu.plist",
-    "~/Library/Preferences/com.macpaw.CleanMyMac#{version.major}.plist",
-    "~/Library/Preferences/com.macpaw.CleanMyMac#{version.major}.Scheduler.plist",
-    "~/Library/Preferences/com.macpaw.CleanMyMac-#{version.major}-Helper.plist",
+    "~/Library/Preferences/com.macpaw.CleanMyMac#{version.major}*",
     "~/Library/WebKit/com.macpaw.CleanMyMac#{version.major}",
     "~/Pictures/Photos Library.photoslibrary/private/com.macpaw.CleanMyMac#{version.major}",
   ]

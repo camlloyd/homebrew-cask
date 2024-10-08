@@ -1,6 +1,6 @@
 cask "securesafe" do
-  version "2.21.0"
-  sha256 "e0807d6cfd0bda9a5899fbf10ba9c0eb48aeeab189de7f9d291a626cc344b12c"
+  version "2.23.0"
+  sha256 "eda8392c5bb4fb07e0ba9983bc8398aa7b1630bf816895da0d2d90cbb9ee5972"
 
   url "https://app.securesafe.com/app/download/securesafe-#{version}.pkg"
   name "SecureSafe"

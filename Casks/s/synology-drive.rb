@@ -1,6 +1,6 @@
 cask "synology-drive" do
-  version "3.4.0,15724"
-  sha256 "eb99997916071a5fa7f53793c7b6f146b18f8dc66257d525c9f7026771b03a11"
+  version "3.5.1,16101"
+  sha256 "5728513a94027951cdc716203d465d0259e0d79689d7f21869dcf7d054e196cc"
 
   url "https://global.download.synology.com/download/Utility/SynologyDriveClient/#{version.csv.first}-#{version.csv.second}/Mac/Installer/synology-drive-client-#{version.csv.second}.dmg"
   name "Synology Drive"
@@ -29,6 +29,7 @@ cask "synology-drive" do
               "com.synology.SynologyDrive.FinderHelper",
               "io.com.synology.CloudStationUI",
             ],
+            signal:    ["TERM", "com.synology.SynologyDrive.FinderHelper.FinderSync"],
             pkgutil:   "com.synology.CloudStation",
             delete:    "/Applications/Synology Drive Client.app"
 

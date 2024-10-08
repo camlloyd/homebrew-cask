@@ -1,6 +1,6 @@
 cask "lidarr" do
-  version "2.1.7.4030"
-  sha256 "5151b61125d0ab1a01d66c1572fab34e8f3623b3099163f0d4cdc8e0c9897246"
+  version "2.5.3.4341"
+  sha256 "595cea9d087b9c6590271fc287df0817bd3137844b7006c8926eaf71139a84ae"
 
   url "https://github.com/lidarr/Lidarr/releases/download/v#{version}/Lidarr.master.#{version}.osx-app-core-x64.zip",
       verified: "github.com/lidarr/Lidarr/"
@@ -18,4 +18,8 @@ cask "lidarr" do
   app "Lidarr.app"
 
   zap trash: "~/.config/Lidarr/"
+
+  caveats do
+    requires_rosetta
+  end
 end

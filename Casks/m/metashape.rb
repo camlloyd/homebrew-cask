@@ -1,8 +1,8 @@
 cask "metashape" do
-  version "2.1.0"
-  sha256 "2482cc9f3e1b284553968cf02b812ecc5648c624201151f7485ebf8640aefbf6"
+  version "2.1.3"
+  sha256 "3bac559a54a8937cddbd6672b800d6adeba5ef9be9e00de667b247ff1703d002"
 
-  url "http://download.agisoft.com/metashape_#{version.dots_to_underscores}.dmg"
+  url "https://download.agisoft.com/metashape_#{version.dots_to_underscores}.dmg"
   name "Agisoft Metashape Standard Edition"
   desc "Process digital images and generate 3D spatial data"
   homepage "https://www.agisoft.com/"

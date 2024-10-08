@@ -1,9 +1,9 @@
 cask "mitmproxy" do
   arch arm: "arm64", intel: "x86_64"
 
-  version "10.2.3"
-  sha256 arm:   "546d0ea87fe4076a54b8769568bf42716063cad20722a1f8fa7f5ce31f31789b",
-         intel: "3ab8fbbb8d1e3fe25d33e994edb7e589fd58b34821f3a5a09d4cf7f40b82405f"
+  version "11.0.0"
+  sha256 arm:   "fad75d039aec51fa81d9cdaeea2695cee2a437c0447dcc1b5862942b8dc73943",
+         intel: "4d9d4781f2737610bd87f593ad92ec7a0330b9a0c2afac495e2ee0b7f8a68bed"
 
   url "https://downloads.mitmproxy.org/#{version}/mitmproxy-#{version}-macos-#{arch}.tar.gz"
   name "mitmproxy"
@@ -15,7 +15,7 @@ cask "mitmproxy" do
   livecheck do
     url "https://downloads.mitmproxy.org/list"
     strategy :xml do |xml|
-      xml.get_elements("//ListBucketResult//CommonPrefixes//Prefix").map do |item|
+      xml.get_elements("//Prefix").map do |item|
         item.text&.strip&.delete_suffix("/")
       end
     end

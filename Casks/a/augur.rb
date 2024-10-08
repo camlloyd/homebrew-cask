@@ -4,8 +4,12 @@ cask "augur" do
 
   url "https://github.com/AugurProject/augur-app/releases/download/v#{version}/mac-Augur-#{version}.dmg"
   name "Augur"
-  desc "App that bundles Augur UI and ugur Node together and deploys them locally"
+  desc "App that bundles Augur UI and Augur Node together and deploys them locally"
   homepage "https://github.com/AugurProject/augur-app/"
 
   app "augur.app"
+
+  caveats do
+    requires_rosetta
+  end
 end

@@ -1,8 +1,8 @@
 cask "sound-siphon" do
-  version "3.6.7"
+  version "3.6.9"
   sha256 :no_check # required as upstream package is updated in-place
 
-  url "https://staticz.com/download/5876/"
+  url "https://staticz.com/download/1837/"
   name "SoundSiphon"
   desc "App audio capture"
   homepage "https://staticz.com/soundsiphon/"

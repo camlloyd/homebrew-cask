@@ -1,9 +1,9 @@
 cask "arduino-ide" do
   arch arm: "ARM64", intel: "64bit"
 
-  version "2.3.2"
-  sha256 arm:   "e682a29610569e421fc8d8276ff3c785347ca8521bfe4817baefa7f542237a1d",
-         intel: "6e78e3830798388ee77429fac1ba7b5eb0643a57e51b44a9b10ffe221f054839"
+  version "2.3.3"
+  sha256 arm:   "e77848fff0d5c5f9e9d75a734cc36aacff7c23c095ede296f4d9a2bee2411085",
+         intel: "161f4d563cb6407202ab11f3f5e0f7e7699f99f2c9064979ad1576f436dd2d8c"
 
   url "https://github.com/arduino/arduino-ide/releases/download/#{version}/arduino-ide_#{version}_macOS_#{arch}.dmg",
       verified: "github.com/arduino/arduino-ide/"
@@ -16,7 +16,7 @@ cask "arduino-ide" do
     strategy :github_latest
   end
 
-  conflicts_with cask: "arduino-ide-nightly"
+  conflicts_with cask: "arduino-ide@nightly"
   depends_on macos: ">= :high_sierra"
 
   app "Arduino IDE.app"
@@ -24,6 +24,8 @@ cask "arduino-ide" do
   zap trash: [
     "~/.arduinoIDE",
     "~/Library/Application Support/arduino-ide",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/cc.arduino.ide*.sfl*",
+    "~/Library/Preferences/cc.arduino.IDE*.plist",
     "~/Library/Saved Application State/cc.arduino.IDE#{version.major}.savedState",
   ]
 end

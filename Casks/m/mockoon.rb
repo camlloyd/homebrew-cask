@@ -1,8 +1,11 @@
 cask "mockoon" do
-  version "7.0.0"
-  sha256 "3117beba50532d203e7d61d9e17af09abab251ec7628df391006d2f86664d28e"
+  arch arm: "arm64", intel: "x64"
 
-  url "https://github.com/mockoon/mockoon/releases/download/v#{version}/mockoon.setup.#{version}.universal.dmg",
+  version "8.4.0"
+  sha256 arm:   "fe6c084e70a3b019bb3de42bf365b50d2fc814c86beeacd964d02bef2b5ca105",
+         intel: "6d20cee783237ee7b985994c5d2ee1f736c79b5b345b760806c0a895182d15d9"
+
+  url "https://github.com/mockoon/mockoon/releases/download/v#{version}/mockoon.setup.#{version}.#{arch}.dmg",
       verified: "github.com/mockoon/mockoon/"
   name "Mockoon"
   desc "Create mock APIs in seconds"
@@ -14,7 +17,7 @@ cask "mockoon" do
   end
 
   auto_updates true
-  depends_on macos: ">= :high_sierra"
+  depends_on macos: ">= :catalina"
 
   app "Mockoon.app"
 

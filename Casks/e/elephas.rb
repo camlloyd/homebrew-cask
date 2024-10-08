@@ -1,19 +1,19 @@
 cask "elephas" do
-  version "9.07"
-  sha256 :no_check
+  version "10.06"
+  sha256 "51905ed97d51e954bb8cb5b6936ff4144938d4dcdde685cc939da35191ab7f51"
 
-  url "https://assets.elephas.app/Elephas_latest.dmg"
+  url "https://assets.elephas.app/Elephas_#{version.dots_to_underscores}.dmg"
   name "Elephas"
   desc "Personal AI Writing Assistant"
   homepage "https://elephas.app/"
 
   livecheck do
-    url :url
-    strategy :extract_plist
+    url "https://assets.elephas.app/index.xml"
+    strategy :sparkle
   end
 
-  conflicts_with cask: "homebrew/cask-versions/elephas-beta"
-  depends_on macos: ">= :catalina"
+  conflicts_with cask: "elephas@beta"
+  depends_on macos: ">= :monterey"
 
   app "Elephas.app"
 

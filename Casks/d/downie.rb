@@ -1,6 +1,6 @@
 cask "downie" do
-  version "4.7.4,4673"
-  sha256 "a3b212226384e3036bc6801b071d7319a3922f32a77ed13bcd186b26c1ba93f7"
+  version "4.8.1,4808"
+  sha256 "a41febdcd53bf5322c6e6a97cc384e85f18bc6609e2fe8663d08f2d932c4d6e7"
 
   url "https://software.charliemonroe.net/trial/downie/v#{version.major}/Downie_#{version.major}_#{version.csv.second}.dmg"
   name "Downie"
@@ -18,16 +18,11 @@ cask "downie" do
   app "Downie #{version.major}.app"
 
   zap trash: [
-    "~/Library/Application Scripts/com.charliemonroe.Downie-#{version.major}",
-    "~/Library/Application Scripts/com.charliemonroe.Downie-#{version.major}-Downie-Extension",
-    "~/Library/Application Scripts/com.charliemonroe.Downie-#{version.major}.Share-Extension",
-    "~/Library/Application Scripts/com.charliemonroe.Downie.Safari",
+    "~/Library/Application Scripts/com.charliemonroe.Downie*",
     "~/Library/Application Scripts/D43XN356JM.Downie",
-    "~/Library/Caches/com.apple.helpd/Generated/com.charliemonroe.DownieHelp*#{version}",
+    "~/Library/Caches/com.apple.helpd/Generated/com.charliemonroe.DownieHelp*",
     "~/Library/Caches/com.charliemonroe.Downie-#{version.major}",
-    "~/Library/Containers/com.charliemonroe.Downie-#{version.major}",
-    "~/Library/Containers/com.charliemonroe.Downie-#{version.major}-Downie-Extension",
-    "~/Library/Containers/com.charliemonroe.Downie-#{version.major}.Share-Extension",
+    "~/Library/Containers/com.charliemonroe.Downie*",
     "~/Library/Group Containers/com.charliemonroe.Downie.Safari",
     "~/Library/Group Containers/D43XN356JM.Downie",
     "~/Library/Preferences/com.charliemonroe.Downie-#{version.major}.plist",

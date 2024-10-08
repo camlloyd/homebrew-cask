@@ -1,9 +1,9 @@
 cask "sakura" do
   arch arm: "arm64", intel: "x86_64"
 
-  version "3.0.7"
-  sha256 arm:   "74e3695c7379ac9501ef972510bd9be77b07155d3b8aea27fb615e9a3ec67c48",
-         intel: "644b6f1337fae68e41db441a5d0392c21a089a0c939c3eecdaf1d4810b46d7d0"
+  version "3.1.4"
+  sha256 arm:   "4813a0ba7ece2778af0b4dc460e2977f2f0580419224638b9b68f159fbd59c35",
+         intel: "b7f76b14fa73714f5d62052fffca49012062222f4f470cb8c253b570d8cc3a33"
 
   url "https://nya.globalslb.net/natfrp/client/launcher-macos/#{version}/SakuraLauncher_macOS_#{arch}.dmg",
       verified: "nya.globalslb.net/natfrp/client/launcher-macos/"

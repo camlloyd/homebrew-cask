@@ -1,9 +1,9 @@
 cask "phpstorm" do
   arch arm: "-aarch64"
 
-  version "2023.3.4,233.14475.35"
-  sha256 arm:   "d63c06c128d23f4e151a498750656488fb5fe49156fade8f2d18c40076a28779",
-         intel: "89be8ee0a6b8bbaa96b24d3959d41145d69961e6f062449c9765643260a2e23d"
+  version "2024.2.3,242.23339.16"
+  sha256 arm:   "9e406b15359c5ccc0f49cd66be0142fbe1a77dc979052943b2f54f1502acce5c",
+         intel: "e4824a57ba7bff5806c11c1eabe6f3615a4ae082cd83549631823fec0ca03b2f"
 
   url "https://download.jetbrains.com/webide/PhpStorm-#{version.csv.first}#{arch}.dmg"
   name "JetBrains PhpStorm"
@@ -26,10 +26,11 @@ cask "phpstorm" do
   binary "#{appdir}/PhpStorm.app/Contents/MacOS/phpstorm"
 
   zap trash: [
-    "~/Library/Application Support/PhpStorm#{version.major_minor}",
-    "~/Library/Caches/PhpStorm#{version.major_minor}",
-    "~/Library/Logs/PhpStorm#{version.major_minor}",
-    "~/Library/Preferences/jetbrains.phpstorm.*.plist",
-    "~/Library/Preferences/PhpStorm#{version.major_minor}",
+    "~/Library/Application Support/JetBrains/consentOptions",
+    "~/Library/Application Support/JetBrains/PhpStorm#{version.major_minor}",
+    "~/Library/Caches/JetBrains/PhpStorm#{version.major_minor}",
+    "~/Library/Logs/JetBrains/PhpStorm#{version.major_minor}",
+    "~/Library/Preferences/com.jetbrains.PhpStorm.plist",
+    "~/Library/Preferences/jetbrains.jetprofile.asset.plist",
   ]
 end

@@ -1,9 +1,9 @@
 cask "syncovery" do
   arch arm: "-Apple"
 
-  version "10.12.4"
-  sha256 arm:   "ebbc6c663ae8517d68ee97c987913a18cc9bd97ec39e6f60d6a53ac4830e9865",
-         intel: "449a560ba9ffd8cd74e3643489e9a11e24a4c0976dbbef197d985d1fd77a511f"
+  version "10.16.0"
+  sha256 arm:   "1a3e52cfc2a60981d240c9c575d7a1e4aa59fbb49d09eeb1cc12645f7dce970f",
+         intel: "91956ae9a06f422e1cef09258d4d23efce48e05d707921c4cc022a1faf6a3c21"
 
   url "https://www.syncovery.com/release/SyncoveryMac#{version}#{arch}.dmg"
   name "Syncovery"
@@ -24,6 +24,6 @@ cask "syncovery" do
     "~/Library/Logs/Syncovery",
     "~/Library/Preferences/Syncovery",
     "~/Library/Preferences/Syncovery.ini",
-    "~/Saved Application State/com.company.Syncovery.savedState",
+    "~/Library/Saved Application State/com.company.Syncovery.savedState",
   ]
 end

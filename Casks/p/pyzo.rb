@@ -1,6 +1,6 @@
 cask "pyzo" do
-  version "4.15.0"
-  sha256 "e9c25aae926096b3c1d6267368ee39951021c074a96ab937a46d85d6ad5b21ed"
+  version "4.17.0"
+  sha256 "460f727426ad4f78af00825b974870a147ceb66b7643eff6b1a3df0cbfb2aedb"
 
   url "https://github.com/pyzo/pyzo/releases/download/v#{version}/pyzo-#{version}-macos_x86_64.dmg",
       verified: "github.com/pyzo/pyzo/"
@@ -11,4 +11,8 @@ cask "pyzo" do
   app "pyzo.app"
 
   zap trash: "~/Library/Application Support/pyzo"
+
+  caveats do
+    requires_rosetta
+  end
 end

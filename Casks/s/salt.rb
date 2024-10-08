@@ -1,9 +1,9 @@
 cask "salt" do
   arch arm: "arm64", intel: "x86_64"
 
-  version "3006.7"
-  sha256 arm:   "022060c90a576754c5a720b6f007d7ea5a42ca50bdce4fa4c8cf68107f5f7885",
-         intel: "03cf7815af813046542b7744b80ec24d48a95df4d75a5b77bdd3f5ab3c4dec92"
+  version "3007.1"
+  sha256 arm:   "968b7701a470f5786474dea4489f96b546e7b6340ba734695b7899aa6edf14a2",
+         intel: "865d2d3792659ddbd48940b0e031a3e9652a85977cf0a2ef3a5ec00e34eb66cb"
 
   url "https://repo.saltproject.io/salt/py3/macos/minor/#{version}/salt-#{version}-py3-#{arch}.pkg"
   name "Salt"
@@ -11,7 +11,7 @@ cask "salt" do
   homepage "https://saltproject.io/"
 
   livecheck do
-    url "https://repo.saltproject.io/salt/py3/macos/latest"
+    url "https://repo.saltproject.io/salt/py3/macos/latest/"
     regex(/salt[._-]v?(\d+(?:\.\d+)+)-py3-#{arch}\.pkg/)
   end
 

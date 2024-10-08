@@ -1,6 +1,6 @@
 cask "rewind" do
-  version "15273.1,800a463,20240206"
-  sha256  "c7e101dc322d83839ae7f3d6135870665ed5ba26c35490061b923afc64cd7a93"
+  version "15310.1,5f6bcc5"
+  sha256  "cc422c5f1aff54b2948efb32f479ec1054f5eafb2b37d540511d226792e73318"
 
   url "https://updates.rewind.ai/builds/main/b#{version.csv.first}-main-#{version.csv.second}.zip"
   name "Rewind"
@@ -10,10 +10,7 @@ cask "rewind" do
   livecheck do
     url "https://updates.rewind.ai/appcasts/main.xml"
     strategy :sparkle do |item|
-      # Throttle updates to one every 3 days.
-      next version if DateTime.parse(version.csv.third) + 3 > Date.today
-
-      "#{item.version},#{item.url.match(/[._-](\w+)\.zip/i)[1]},#{item.pub_date.strftime("%Y%m%d")}"
+      "#{item.version},#{item.url.match(/[._-](\w+)\.zip/i)[1]}"
     end
   end
 

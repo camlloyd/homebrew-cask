@@ -1,6 +1,6 @@
 cask "dashcam-viewer" do
-  version "3.9.6"
-  sha256 "d2ca0320e0a9488f667b4b2ee771a2bdb712a49b72e03a3d25e9695750046e7a"
+  version "4.0.0"
+  sha256 "84e380b879c3783fa31fb4cfe972b5c19e3a1b6f70c981842df632598c69fad6"
 
   url "https://filedn.com/l2s8TAtm4VASBX72ds0zYD8/dcv/Dashcam_Viewer_v#{version}.dmg",
       verified: "filedn.com/l2s8TAtm4VASBX72ds0zYD8/dcv/"
@@ -23,4 +23,8 @@ cask "dashcam-viewer" do
     "~/Library/Caches/earthshinesw",
     "~/Library/Preferences/com.earthshinesw.DashcamViewer.plist",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

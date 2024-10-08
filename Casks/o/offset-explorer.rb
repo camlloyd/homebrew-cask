@@ -1,5 +1,5 @@
 cask "offset-explorer" do
-  version "3.0"
+  version "3.0.1"
   sha256 :no_check
 
   url "https://www.kafkatool.com/download2/offsetexplorer.dmg"
@@ -16,4 +16,8 @@ cask "offset-explorer" do
   app "Offset Explorer 2.app"
 
   zap trash: "~/.kafkatool2"
+
+  caveats do
+    requires_rosetta
+  end
 end

@@ -1,5 +1,5 @@
 cask "lehreroffice" do
-  version "2024.1.1"
+  version "2024.3.0"
   sha256 :no_check
 
   url "https://www.lehreroffice.ch/lo/dateien/easy/lo_desktop_macos.dmg"
@@ -19,4 +19,8 @@ cask "lehreroffice" do
         "~/Documents/LehrerOffice",
         "~/Library/Saved Application State/ch.rothsoft.lehreroffice.desktop.savedState",
       ]
+
+  caveats do
+    requires_rosetta
+  end
 end

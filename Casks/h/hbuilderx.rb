@@ -1,6 +1,6 @@
 cask "hbuilderx" do
-  version "3.99.2023122611"
-  sha256 "462dcb09cf29ed9e1593e85537ca7c45f865c276381aa2d17842e740a8a76b35"
+  version "4.29.2024093009"
+  sha256 "fb2c4aa1ef956a9d51f8a2a76d200f4233dafe6e63d6def830780a9f03c2caa0"
 
   url "https://download1.dcloud.net.cn/download/HBuilderX.#{version}.dmg",
       verified: "download1.dcloud.net.cn/download/"
@@ -18,4 +18,8 @@ cask "hbuilderx" do
   app "HBuilderX.app"
 
   zap trash: "~/Library/Application Support/HBuilder X"
+
+  caveats do
+    requires_rosetta
+  end
 end

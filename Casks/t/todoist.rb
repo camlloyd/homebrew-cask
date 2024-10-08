@@ -1,8 +1,11 @@
 cask "todoist" do
-  version "8.17.3"
-  sha256 "64edf66c95ce59d12385545974593a5d75542dc61d1d5fd729adc43cf329c0f1"
+  arch arm: "arm64", intel: "x64"
 
-  url "https://electron-dl.todoist.com/mac/Todoist-darwin-#{version}-universal.dmg"
+  version "9.7.7"
+  sha256 arm:   "03d0a2506fb3b11591e7ae40427975e6b519629a81aff6152aa710f321754673",
+         intel: "8bfb112f264e0bd99c0b4283f91b3a6cfd002cdab969dbf7481fd26cf32c4034"
+
+  url "https://electron-dl.todoist.com/mac/Todoist-darwin-#{version}-#{arch}-latest.dmg"
   name "Todoist"
   desc "To-do list"
   homepage "https://todoist.com/home"

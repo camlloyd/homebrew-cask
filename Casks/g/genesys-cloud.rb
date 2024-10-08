@@ -1,6 +1,6 @@
 cask "genesys-cloud" do
-  version "2.32.585,86"
-  sha256 "02c29850d5e39e660c64698a0961fd50912766e9e3b3ecdacae2fb44fc354894"
+  version "2.38.601,101"
+  sha256 "bc0442d901eb70e12ac7bf28b0bfe643bf776c862551eb927c0868dfafa283f7"
 
   url "https://app.mypurecloud.com/directory-mac/build-assets/#{version.csv.first}-#{version.csv.second}/genesys-cloud-mac-#{version.csv.first}.dmg"
   name "Genesys Cloud for macOS"
@@ -27,4 +27,8 @@ cask "genesys-cloud" do
     "~/Library/Preferences/com.inin.purecloud.directory.plist",
     "~/Library/Saved Application State/com.inin.purecloud.directory.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

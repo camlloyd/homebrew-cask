@@ -1,6 +1,6 @@
 cask "mailplane" do
-  version "4.3.6,4932"
-  sha256 "2b8d47bc8dc922d4b53a4c45ebcbdad51174e9b3e043b02150d608218ffc2596"
+  version "4.3.11,4951"
+  sha256 "20a9e6c759c472a0678841b3ddf9c29bcd4bd74d53a254336013e0111973d5a4"
 
   url "https://builds.mailplaneapp.com/Mailplane_#{version.major}_#{version.csv.second}.tbz"
   name "Mailplane"
@@ -18,4 +18,8 @@ cask "mailplane" do
   app "Mailplane.app"
 
   zap trash: "~/Library/Preferences/com.mailplaneapp.Mailplane.plist"
+
+  caveats do
+    requires_rosetta
+  end
 end

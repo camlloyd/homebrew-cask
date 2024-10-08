@@ -1,11 +1,11 @@
 cask "publii" do
   arch arm: "apple-silicon", intel: "intel"
 
-  version "0.45.1"
-  sha256 arm:   "af57bd61bce164430a63c70a5b4ef64b100ef096d94de6a0e6da3b45cf08a819",
-         intel: "ba9c54e625fc0ed1fbeb9f9d85ef7c4db3a3e2a45c81cbd049f1b476ab6df888"
+  version "0.46.1"
+  sha256 arm:   "72f0520e219dd34593f76b0ba6394b88e0d1b4c8158cc699bee9afc118c6d9ab",
+         intel: "0b2dfc2ab5f8d9a6244789acbcbd499059e8dcc76376d3fea371ad6371970c2f"
 
-  url "https://cdn.getpublii.com/Publii-#{version}-#{arch}.dmg"
+  url "https://getpublii.com/download/Publii-#{version}-#{arch}.dmg"
   name "Publii"
   desc "Static website generator"
   homepage "https://getpublii.com/"

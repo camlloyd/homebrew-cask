@@ -1,9 +1,9 @@
 cask "intellij-idea-ce" do
   arch arm: "-aarch64"
 
-  version "2023.3.4,233.14475.28"
-  sha256 arm:   "bd307662302107f45299a7e4a163cde48191eda660747899aff66298aaf5bc3b",
-         intel: "724a9a665faf6612ce6723580874098b5cf9daf0700f421ea8b480a570d429d6"
+  version "2024.2.3,242.23339.11"
+  sha256 arm:   "67f71e9f2fd1401c46794e12cd660906fc4e667d68454f36807923dc5e5ffd42",
+         intel: "015db6b1a9b57b55db005d6eff8752e4155d52841f03dbd679e204d8ae9289e9"
 
   url "https://download.jetbrains.com/idea/ideaIC-#{version.csv.first}#{arch}.dmg"
   name "IntelliJ IDEA Community Edition"
@@ -21,7 +21,6 @@ cask "intellij-idea-ce" do
   end
 
   auto_updates true
-  conflicts_with cask: "intellij-idea-ce19"
   depends_on macos: ">= :high_sierra"
 
   app "IntelliJ IDEA CE.app"

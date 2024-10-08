@@ -1,6 +1,6 @@
 cask "proxyman" do
-  version "5.0.0,50000"
-  sha256 "a13d83e0e4333ed2eaac0fa848fca458e0ec6eeaf5f89e8dbd893eaf2dc7fbb0"
+  version "5.9.0,50900"
+  sha256 "ba3e1d90b5cef19a52af09ae29dda9b4020aee54b4660bcd98f469f2ce354fe4"
 
   url "https://download.proxyman.io/#{version.csv.second}/Proxyman_#{version.csv.first}.dmg"
   name "Proxyman"
@@ -13,6 +13,7 @@ cask "proxyman" do
   end
 
   auto_updates true
+  depends_on macos: ">= :big_sur"
 
   app "Proxyman.app"
   binary "#{appdir}/Proxyman.app/Contents/MacOS/proxyman-cli"
@@ -35,6 +36,7 @@ cask "proxyman" do
 
   zap trash: [
     "~/.proxyman*",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.proxyman.nsproxy.sfl*",
     "~/Library/Application Support/com.proxyman",
     "~/Library/Application Support/com.proxyman.NSProxy",
     "~/Library/Caches/com.plausiblelabs.crashreporter.data/com.proxyman.NSProxy",
